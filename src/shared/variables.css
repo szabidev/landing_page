@@ -1,8 +1,8 @@
 :root {
-  --green: #0b6353;
+  --greenShade: #0b6353;
   --offwhite: #eae6dc;
   --white: #fff;
-  --font-main-color: ##343332;
+  --fontMainColor: #343332;
   --font-secondary-color: #555555;
   --font-main: "Open Sans", sans-serif;
 }

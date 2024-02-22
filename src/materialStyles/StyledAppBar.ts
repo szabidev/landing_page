@@ -14,8 +14,16 @@ export const StyledAppBar = styled(AppBar)<StyledComponentProps>(() => ({
   flexDirection: "row",
 
   "&.MuiAppBar-root": {
-    "@media screen and (max-width: 800px)": {
+    "@media screen and  (max-width: 768px)": {
       maxWidth: "100%",
+      borderRadius: "0px",
+    },
+
+    "@media screen and (min-width:500px) and (max-width:800px)": {
+      justifyContent: "start",
+    },
+    "@media screen and (min-width:1920px)": {
+      width: "30%",
     },
   },
 }));
