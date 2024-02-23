@@ -1,5 +1,14 @@
 @import "../src/shared/variables.css";
 
+@font-face {
+  font-family: "Open Sans Condensed";
+  font-style: normal;
+  font-weight: 300, 400, 500, 600, 700, 800;
+  src: local("Open Sans Condensed"), local("OpenSansCondensed"),
+    url("../public/assets/fonts/OpenSans_Condensed-Regular.ttf")
+      format("truetype");
+}
+
 body {
   margin: 0;
   font-family: var(--font-main);
