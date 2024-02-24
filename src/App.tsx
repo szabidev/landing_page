@@ -1,9 +1,10 @@
 import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
+import Home from "./components/Home/Home";
 import Name from "./components/Name/Name";
 import NavigationArrow from "./components/NavigationArrow/NavigationArrow";
 import Social from "./components/Social/Social";
-// ! Continue with font styling for name and title on homepage
+// import Title from "./components/Title/Title";
 
 function App() {
   return (
@@ -12,6 +13,8 @@ function App() {
       <Social />
       <NavigationArrow />
       <Name />
+      <Home />
+
       <Footer />
     </div>
   );

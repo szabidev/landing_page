@@ -3,9 +3,111 @@
 @font-face {
   font-family: "Open Sans Condensed";
   font-style: normal;
-  font-weight: 300, 400, 500, 600, 700, 800;
+  font-weight: 300;
+  src: local("Open Sans Condensed Light"), local("OpenSansCondensed-Light"),
+    url("../public/assets/fonts/OpenSans_Condensed-Light.ttf")
+      format("truetype");
+}
+
+@font-face {
+  font-family: "Open Sans Condensed";
+  font-style: italic;
+  font-weight: 300;
+  src: local("Open Sans Condensed Light Italic"),
+    local("OpenSansCondensed-LightItalic"),
+    url("../public/assets/fonts/OpenSans_Condensed-LightItalic.ttf")
+      format("truetype");
+}
+
+@font-face {
+  font-family: "Open Sans Condensed";
+  font-style: normal;
+  font-weight: 400;
   src: local("Open Sans Condensed"), local("OpenSansCondensed"),
     url("../public/assets/fonts/OpenSans_Condensed-Regular.ttf")
+      format("truetype");
+}
+
+@font-face {
+  font-family: "Open Sans Condensed";
+  font-style: italic;
+  font-weight: 400;
+  src: local("Open Sans Condensed Italic"), local("OpenSansCondensed-Italic"),
+    url("../public/assets/fonts/OpenSans_Condensed-Italic.ttf")
+      format("truetype");
+}
+
+@font-face {
+  font-family: "Open Sans Condensed";
+  font-style: normal;
+  font-weight: 500;
+  src: local("Open Sans Condensed Medium"), local("OpenSansCondensed-Medium"),
+    url("../public/assets/fonts/OpenSans_Condensed-Medium.ttf")
+      format("truetype");
+}
+
+@font-face {
+  font-family: "Open Sans Condensed";
+  font-style: italic;
+  font-weight: 500;
+  src: local("Open Sans Condensed Medium Italic"),
+    local("OpenSansCondensed-MediumItalic"),
+    url("../public/assets/fonts/OpenSans_Condensed-MediumItalic.ttf")
+      format("truetype");
+}
+@font-face {
+  font-family: "Open Sans Condensed";
+  font-style: normal;
+  font-weight: 600;
+  src: local("Open Sans Condensed Semi Bold"),
+    local("OpenSansCondensed-SemiBold"),
+    url("../public/assets/fonts/OpenSans_Condensed-SemiBold.ttf")
+      format("truetype");
+}
+
+@font-face {
+  font-family: "Open Sans Condensed";
+  font-style: italic;
+  font-weight: 600;
+  src: local("Open Sans Condensed Semi Bold Italic"),
+    local("OpenSansCondensed-SemiBoldItalic"),
+    url("../public/assets/fonts/OpenSans_Condensed-SemiBoldItalic.ttf")
+      format("truetype");
+}
+@font-face {
+  font-family: "Open Sans Condensed";
+  font-style: normal;
+  font-weight: 700;
+  src: local("Open Sans Condensed Bold"), local("OpenSansCondensed-Bold"),
+    url("../public/assets/fonts/OpenSans_Condensed-Bold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Open Sans Condensed";
+  font-style: italic;
+  font-weight: 700;
+  src: local("Open Sans Condensed Bold Italic"),
+    local("OpenSansCondensed-BoldItalic"),
+    url("../public/assets/fonts/OpenSans_Condensed-BoldItalic.ttf")
+      format("truetype");
+}
+
+@font-face {
+  font-family: "Open Sans Condensed";
+  font-style: normal;
+  font-weight: 800;
+  src: local("Open Sans Condensed Extra Bold"),
+    local("OpenSansCondensed-ExtraBold"),
+    url("../public/assets/fonts/OpenSans_Condensed-ExtraBold.ttf")
+      format("truetype");
+}
+@font-face {
+  font-family: "Open Sans Condensed";
+  font-style: italic;
+  font-weight: 800;
+  src: local("Open Sans Condensed Extra Bold Italic"),
+    local("OpenSansCondensed-ExtraBoldItalic"),
+    url("../public/assets/fonts/OpenSans_Condensed-ExtraBoldItalic.ttf")
       format("truetype");
 }
 
