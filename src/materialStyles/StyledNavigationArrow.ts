@@ -16,7 +16,7 @@ export const StyledNavigationArrow = styled(
   },
 
   // ? Why variable names don't work sometime with material UI?
-  "@media screen and (max-width: 420px)": {
+  "@media screen and (max-width: 431px)": {
     fontSize: 40,
     color: "var(--offwhite)",
     zIndex: 101,

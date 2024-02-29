@@ -12,7 +12,7 @@ export const StyledFooterContainer = styled(Container)<StyledComponentProps>(
     "&.MuiContainer-root": {
       maxWidth: "100%",
 
-      "@media screen and (min-width:420px)": {
+      "@media screen and (min-width:431px)": {
         display: "none",
       },
     },

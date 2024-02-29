@@ -5,7 +5,7 @@ import "../../shared/variables.css";
 const Title = () => {
   const theme = useTheme();
   const isLargeScreen = useMediaQuery(theme.breakpoints.up(1920));
-  const isSmallScreen = useMediaQuery(theme.breakpoints.down(420));
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down(431));
 
   const titleStyles = {
     fontFamily: "var(--font-secondary)",

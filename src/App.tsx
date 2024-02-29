@@ -4,7 +4,6 @@ import Home from "./components/Home/Home";
 import Name from "./components/Name/Name";
 import NavigationArrow from "./components/NavigationArrow/NavigationArrow";
 import Social from "./components/Social/Social";
-// import Title from "./components/Title/Title";
 
 function App() {
   return (
@@ -14,7 +13,6 @@ function App() {
       <NavigationArrow />
       <Name />
       <Home />
-
       <Footer />
     </div>
   );

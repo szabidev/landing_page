@@ -1,7 +1,6 @@
 import {
   Box,
   Container,
-  Typography,
   //   useMediaQuery,
   //   useTheme,
 } from "@mui/material";

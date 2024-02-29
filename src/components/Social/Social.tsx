@@ -7,7 +7,7 @@ import { StyledSocialBox } from "../../materialStyles/StyledSocialBox";
 
 const Social = () => {
   const theme = useTheme();
-  const isSmallScreen = useMediaQuery(theme.breakpoints.down(420));
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down(431));
   const isLargeScreen = useMediaQuery("(min-width:1920px)");
 
   const linkStyle = {
