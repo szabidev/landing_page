@@ -7,5 +7,19 @@ export const StyledTitle = styled(Typography)<StyledComponentProps>(() => ({
   textTransform: "uppercase",
   color: "var(--green)",
   fontWeight: "300",
-  //   fontSize: isLargeScreen ? "160px" : isSmallScreen ? "48px" : "120px",
+  "@media screen and (max-width:431px)": {
+    fontSize: "48px",
+  },
+  "@media screen and (min-width:432px) and (max-width:800px)": {
+    fontSize: "96px",
+  },
+  "@media screen and (min-width:801px) and (max-width:1919px)": {
+    fontSize: "120px",
+  },
+  "@media screen and (min-width:1920px)": {
+    fontSize: "160px",
+  },
+  "@media screen and (min-width:2560px)": {
+    fontSize: "220px",
+  },
 }));

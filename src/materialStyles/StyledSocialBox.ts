@@ -26,7 +26,7 @@ export const StyledSocialBox = styled(Box)(() => ({
     left: "auto",
   },
 
-  "@media screen and (min-width:769px) and (max-width:1440px)": {
+  "@media screen and (min-width:769px) and (max-width:1920px)": {
     top: 35,
     right: 28,
     bottom: "auto",
