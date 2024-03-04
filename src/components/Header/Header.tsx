@@ -8,15 +8,18 @@ const Header = () => {
   const isTabletScreen = useMediaQuery(
     "(min-width:421px) and (max-width:800px)"
   );
+  const isLargeScreen = useMediaQuery("(min-width:1920px)");
 
   const navigationLinkStyle = {
     textDecoration: "none",
     color: "var(--fontMainColor)",
+    letterSpacing: "1px",
     zIndex: "100",
     textTransform: "uppercase",
     // ? or fontWeight: 800 - or just on small/large screen
-    fontWeight: "600",
+    fontWeight: isLargeScreen ? "700" : "600",
     margin: isTabletScreen ? "0 30px 0 20px" : 0,
+    fontSize: isLargeScreen ? "24px" : "16px",
   };
 
   return (

@@ -8,7 +8,19 @@ export const StyledTitleBox = styled(Box)<StyledComponentProps>(() => ({
   top: 140,
   left: 35,
 
-  "@media screen and (max-width:430px)": {
+  "@media screen and (max-width:390px)": {
+    top: 260,
+    left: "auto",
+    right: 25,
+  },
+
+  "@media screen and (min-width:391px) and (max-width:430px)": {
+    top: 260,
+    left: "auto",
+    right: 15,
+  },
+
+  "@media screen and (min-width:431px)and (max-width:639px)": {
     top: 260,
     left: 15,
   },
@@ -20,6 +32,7 @@ export const StyledTitleBox = styled(Box)<StyledComponentProps>(() => ({
   "@media screen and (min-width:1920px)": {
     left: -100,
   },
+
   "@media screen and (min-width:2560px)": {
     top: 230,
     left: -400,

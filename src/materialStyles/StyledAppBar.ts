@@ -24,6 +24,7 @@ export const StyledAppBar = styled(AppBar)<StyledComponentProps>(() => ({
     },
     "@media screen and (min-width:1920px)": {
       width: "30%",
+      height: 80,
     },
   },
 }));

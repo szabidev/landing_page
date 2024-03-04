@@ -9,8 +9,9 @@ export const StyledNameBox = styled(Box)<StyledComponentProps>(() => ({
   position: "fixed",
   bottom: 60,
   right: 40,
+  zIndex: 1001,
 
-  "@media screen and (max-width: 420px)": {
+  "@media screen and (max-width: 430px)": {
     right: 20,
   },
 }));

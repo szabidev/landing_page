@@ -7,16 +7,11 @@ import {
 
 import Title from "../Title/Title";
 import { StyledHomeDescription } from "../../materialStyles/StyledHomeDescription";
+import { StyledImageBox } from "../../materialStyles/StyledImageBox";
 
 const Home = () => {
   //   const theme = useTheme();
   //   const isLargeScreen = useMediaQuery(theme.breakpoints.up(1920));
-
-  const imageBoxStyle = {
-    position: "absolute",
-    bottom: 0,
-    left: 165,
-  };
 
   return (
     <Container maxWidth="xl" sx={{ height: "100vh", position: "relative" }}>
@@ -29,11 +24,9 @@ const Home = () => {
           trends, I bring creativity and precision to every project.
         </StyledHomeDescription>
       </Box>
-      <Box
+      <StyledImageBox
         component="img"
         src="./assets/img/landing_page_main.png"
-        height={660}
-        sx={imageBoxStyle}
       />
     </Container>
   );

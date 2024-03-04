@@ -1,0 +1,36 @@
+@import "../../shared/variables.css";
+
+.name-s {
+}
+.name-z {
+}
+.name-a {
+}
+.name-b {
+}
+.name-i {
+}
+
+.name-j {
+}
+.name-t {
+}
+.name-e {
+}
+.name-k {
+}
+
+/* ! DECIDE ON COLOR CHANGES ON TRANSITIONS */
+
+@media screen and (max-width: 390px) {
+  .name-v,
+  .name-o {
+    color: var(--fontMainColor);
+  }
+}
+
+@media screen and (min-width: 429px) and (max-width: 500px) {
+  .name-s {
+    color: var(--offwhite);
+  }
+}
