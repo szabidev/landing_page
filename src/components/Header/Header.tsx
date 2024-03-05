@@ -1,6 +1,6 @@
 import { Link, useMediaQuery } from "@mui/material";
 
-import { StyledHeaderContainer } from "../../materialStyles/StyledHeaderContainer";
+import { HeaderContainer } from "../../materialStyles/HeaderContainer";
 import { StyledAppBar } from "../../materialStyles/StyledAppBar";
 import "../../shared/variables.css";
 
@@ -23,7 +23,7 @@ const Header = () => {
   };
 
   return (
-    <StyledHeaderContainer maxWidth="xl">
+    <HeaderContainer maxWidth="xl">
       <StyledAppBar position="sticky" sx={{ boxShadow: "none" }}>
         <Link sx={navigationLinkStyle} href="#">
           About
@@ -31,7 +31,7 @@ const Header = () => {
         <Link sx={navigationLinkStyle}>Work</Link>
         <Link sx={navigationLinkStyle}>Contact</Link>
       </StyledAppBar>
-    </StyledHeaderContainer>
+    </HeaderContainer>
   );
 };
 

@@ -3,12 +3,12 @@ import { Box } from "@mui/material";
 import "../shared/variables.css";
 import { ImageProps } from "../shared/types";
 
-export const StyledImageBox = styled(Box)<ImageProps>(() => ({
+export const HomeImage = styled(Box)<ImageProps>(() => ({
   position: "absolute",
   bottom: 0,
   left: 165,
 
-  "@media screen and (max-width:400px)": {
+  "@media screen and (min-width:320px) and (max-width:400px)": {
     left: -145,
     bottom: -45,
     height: 720,
@@ -36,6 +36,7 @@ export const StyledImageBox = styled(Box)<ImageProps>(() => ({
     left: 220,
     height: 490,
   },
+
   "@media screen and (min-width:1367px) and (max-width:1919px)": {
     height: 660,
   },

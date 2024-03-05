@@ -2,7 +2,7 @@ import { Box } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import "../shared/variables.css";
 
-export const StyledSocialBox = styled(Box)(() => ({
+export const SocialBox = styled(Box)(() => ({
   width: "160px",
   display: "flex",
   justifyContent: "space-evenly",

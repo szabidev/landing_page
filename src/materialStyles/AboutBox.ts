@@ -7,5 +7,4 @@ export const AboutBox = styled(Box)<StyledComponentProps>(() => ({
   position: "absolute",
   bottom: 60,
   left: 320,
-  //   textAlign: "right",
 }));

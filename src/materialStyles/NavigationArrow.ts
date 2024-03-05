@@ -2,9 +2,13 @@ import { styled, StyledComponentProps } from "@mui/material/styles";
 import ExpandCircleDownIcon from "@mui/icons-material/ExpandCircleDown";
 import "../shared/variables.css";
 
-export const StyledNavigationArrow = styled(
+interface NavigationArrowProps extends StyledComponentProps {
+  sx?: { [key: string]: string | number | any };
+}
+
+export const NavigationArrow = styled(
   ExpandCircleDownIcon
-)<StyledComponentProps>(() => ({
+)<NavigationArrowProps>(() => ({
   // ? or color var(--green) ?
   color: "var(--fontMainColor)",
   fontSize: 70,

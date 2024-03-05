@@ -2,7 +2,7 @@ import { Box } from "@mui/material";
 import { styled, StyledComponentProps } from "@mui/material/styles";
 import "../shared/variables.css";
 
-export const StyledNavigationBox = styled(Box)<StyledComponentProps>(() => ({
+export const NavigationBox = styled(Box)<StyledComponentProps>(() => ({
   display: "flex",
   flexDirection: "column",
   justifyContent: "space-evenly",

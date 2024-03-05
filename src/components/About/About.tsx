@@ -1,7 +1,6 @@
-import { Box, Container, Typography } from "@mui/material";
-import React from "react";
-import { AboutTitle } from "../../materialStyles/AboutTitle";
+import { Container } from "@mui/material";
 import { AboutBox } from "../../materialStyles/AboutBox";
+import { AboutTitle } from "../../materialStyles/AboutTitle";
 import { AboutDescription } from "../../materialStyles/AboutDescription";
 import { AboutImage } from "../../materialStyles/AboutImage";
 

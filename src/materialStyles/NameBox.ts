@@ -2,7 +2,7 @@ import { styled, StyledComponentProps } from "@mui/material/styles";
 import { Box } from "@mui/material";
 import "../shared/variables.css";
 
-export const StyledNameBox = styled(Box)<StyledComponentProps>(() => ({
+export const NameBox = styled(Box)<StyledComponentProps>(() => ({
   textAlign: "right",
   width: "fit-content",
   // ! Check position fixed / absolute

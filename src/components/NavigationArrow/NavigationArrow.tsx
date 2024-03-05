@@ -1,8 +1,8 @@
-import { StyledNavigationBox } from "../../materialStyles/StyledNavigationBox";
+import { NavigationBox } from "../../materialStyles/NavigationBox";
 import "../../shared/variables.css";
-import { StyledNavigationArrow } from "../../materialStyles/StyledNavigationArrow";
+import { NavigationArrow } from "../../materialStyles/NavigationArrow";
 
-const NavigationArrow = () => {
+const NavigationArrowMenu = () => {
   const rotate = {
     "&:hover": {
       transform: "rotate(180deg) scale(1.1)",
@@ -10,11 +10,11 @@ const NavigationArrow = () => {
   };
 
   return (
-    <StyledNavigationBox>
-      <StyledNavigationArrow sx={{ ...rotate, transform: "rotate(180deg)" }} />
-      <StyledNavigationArrow />
-    </StyledNavigationBox>
+    <NavigationBox>
+      <NavigationArrow sx={{ ...rotate, transform: "rotate(180deg)" }} />
+      <NavigationArrow />
+    </NavigationBox>
   );
 };
 
-export default NavigationArrow;
+export default NavigationArrowMenu;

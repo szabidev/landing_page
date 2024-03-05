@@ -1,12 +1,12 @@
-import { StyledTitleBox } from "../../materialStyles/StyledTitleBox";
+import { TitleBox } from "../../materialStyles/TitleBox";
 import { StyledTitle } from "../../materialStyles/StyledTitle";
 
 const Title = () => {
   return (
-    <StyledTitleBox>
+    <TitleBox>
       <StyledTitle variant="h1">Frontend</StyledTitle>
       <StyledTitle variant="h1">Developer</StyledTitle>
-    </StyledTitleBox>
+    </TitleBox>
   );
 };
 

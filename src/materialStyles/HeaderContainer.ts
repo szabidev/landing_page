@@ -1,7 +1,7 @@
 import { Container } from "@mui/material";
 import { styled, StyledComponentProps } from "@mui/material/styles";
 
-export const StyledHeaderContainer = styled(Container)<StyledComponentProps>(
+export const HeaderContainer = styled(Container)<StyledComponentProps>(
   () => ({
     position: "fixed",
     top: "0",

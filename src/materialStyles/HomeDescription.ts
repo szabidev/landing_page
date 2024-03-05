@@ -2,7 +2,7 @@ import { styled, StyledComponentProps } from "@mui/material/styles";
 import { Typography } from "@mui/material";
 import "../shared/variables.css";
 
-export const StyledHomeDescription = styled(Typography)<StyledComponentProps>(
+export const HomeDescription = styled(Typography)<StyledComponentProps>(
   () => ({
     width: "42%",
     textAlign: "right",

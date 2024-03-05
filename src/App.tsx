@@ -3,7 +3,7 @@ import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
 import Home from "./components/Home/Home";
 import Name from "./components/Name/Name";
-import NavigationArrow from "./components/NavigationArrow/NavigationArrow";
+import NavigationArrowMenu from "./components/NavigationArrow/NavigationArrow";
 import Social from "./components/Social/Social";
 
 function App() {
@@ -11,7 +11,7 @@ function App() {
     <div className="App">
       <Header />
       <Social />
-      <NavigationArrow />
+      <NavigationArrowMenu />
       <Name />
       <Home />
       <About />

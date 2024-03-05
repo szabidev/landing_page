@@ -3,7 +3,7 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import GitHubIcon from "@mui/icons-material/GitHub";
-import { StyledSocialBox } from "../../materialStyles/StyledSocialBox";
+import { SocialBox } from "../../materialStyles/SocialBox";
 
 const Social = () => {
   const theme = useTheme();
@@ -27,7 +27,7 @@ const Social = () => {
   };
 
   return (
-    <StyledSocialBox>
+    <SocialBox>
       <Link
         href="https://www.linkedin.com/in/szabolcs-vojtek/"
         target="_blank"
@@ -52,7 +52,7 @@ const Social = () => {
       <Link href="https://github.com/szabidev" target="_blank" sx={linkStyle}>
         <GitHubIcon sx={iconStyle} />
       </Link>
-    </StyledSocialBox>
+    </SocialBox>
   );
 };
 

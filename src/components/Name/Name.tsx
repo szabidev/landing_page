@@ -1,6 +1,6 @@
 // import { useMediaQuery, useTheme } from "@mui/material";
 import { Link } from "@mui/material";
-import { StyledNameBox } from "../../materialStyles/StyledNameBox";
+import { NameBox } from "../../materialStyles/NameBox";
 import { StyledName } from "../../materialStyles/StyledName";
 import "../../shared/variables.css";
 import "./Name.css";
@@ -11,7 +11,7 @@ const Name = () => {
   // const isLargeScreen = useMediaQuery(theme.breakpoints.up(1920));
 
   return (
-    <StyledNameBox>
+    <NameBox>
       <Link href="#home" sx={{ textDecoration: "none", cursor: "pointer" }}>
         <StyledName variant="h1">
           <span className="name-s">S</span>
@@ -29,7 +29,7 @@ const Name = () => {
           <span className="name-k">k</span>
         </StyledName>
       </Link>
-    </StyledNameBox>
+    </NameBox>
   );
 };
 

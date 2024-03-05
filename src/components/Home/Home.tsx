@@ -4,10 +4,9 @@ import {
   //   useMediaQuery,
   //   useTheme,
 } from "@mui/material";
-
 import Title from "../Title/Title";
-import { StyledHomeDescription } from "../../materialStyles/StyledHomeDescription";
-import { StyledImageBox } from "../../materialStyles/StyledImageBox";
+import { HomeDescription } from "../../materialStyles/HomeDescription";
+import { HomeImage } from "../../materialStyles/HomeImage";
 
 const Home = () => {
   //   const theme = useTheme();
@@ -17,17 +16,14 @@ const Home = () => {
     <Container maxWidth="xl" sx={{ height: "100vh", position: "relative" }}>
       <Title />
       <Box>
-        <StyledHomeDescription variant="subtitle1">
+        <HomeDescription variant="subtitle1">
           Passionate and detail-oriented web developer with a curious mindset, I
           thrive on problem-solving and transforming ideas into seamless user
           experiences. Committed to staying at the forefront of web development
           trends, I bring creativity and precision to every project.
-        </StyledHomeDescription>
+        </HomeDescription>
       </Box>
-      <StyledImageBox
-        component="img"
-        src="./assets/img/landing_page_main.png"
-      />
+      <HomeImage component="img" src="./assets/img/landing_page_main.png" />
     </Container>
   );
 };
