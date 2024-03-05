@@ -1,10 +1,7 @@
-import { styled, StyledComponentProps } from "@mui/material/styles";
+import { styled } from "@mui/material/styles";
 import { Box } from "@mui/material";
 import "../shared/variables.css";
-
-interface ImageProps extends StyledComponentProps {
-  src: string;
-}
+import { ImageProps } from "../shared/types";
 
 export const StyledImageBox = styled(Box)<ImageProps>(() => ({
   position: "absolute",

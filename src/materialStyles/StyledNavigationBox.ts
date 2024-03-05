@@ -7,9 +7,10 @@ export const StyledNavigationBox = styled(Box)<StyledComponentProps>(() => ({
   flexDirection: "column",
   justifyContent: "space-evenly",
   height: "160px",
-  position: "absolute",
+  position: "fixed",
   bottom: 60,
   left: 40,
+  zIndex: 1003,
 
   "@media screen and (max-width: 390px)": {
     flexDirection: "row",
