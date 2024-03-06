@@ -111,14 +111,11 @@
       format("truetype");
 }
 
-body {
+body,
+html {
+  box-sizing: border-box;
   margin: 0;
   font-family: var(--font-main);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: var(--offwhite);
-}
-
-.App {
-  position: "relative";
 }

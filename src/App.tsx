@@ -6,6 +6,8 @@ import Name from "./components/Name/Name";
 import NavigationArrowMenu from "./components/NavigationArrow/NavigationArrow";
 import Social from "./components/Social/Social";
 
+// ! FIX HOME AND ABOUT PAGE GAPE, ABOUT BORDER TOP GETS RID OF GAP, CHECK CONTAINERS MAXWIDHT PROPERTY
+
 function App() {
   return (
     <div className="App">

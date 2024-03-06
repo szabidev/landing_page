@@ -3,16 +3,21 @@ import { AboutBox } from "../../materialStyles/AboutBox";
 import { AboutTitle } from "../../materialStyles/AboutTitle";
 import { AboutDescription } from "../../materialStyles/AboutDescription";
 import { AboutImage } from "../../materialStyles/AboutImage";
+import Skills from "../Skills/Skills";
 
 const About = () => {
+  // TODO FIX GAP BETWEEN CONATINERS, MAXWIDTH ISSUE PROBABLY
+
   return (
     <Container
-      maxWidth="xl"
+      maxWidth={false}
       sx={{
         backgroundColor: "#fff",
         position: "relative",
-        minHeight: "100vh",
-        minWidth: "100%",
+        height: "100vh",
+        padding: 0,
+        // ! Temporary fix
+        borderTop: "1px solid transparent",
       }}
     >
       <AboutBox>
@@ -41,6 +46,7 @@ const About = () => {
         </AboutDescription>
       </AboutBox>
       <AboutImage component="img" src="./assets/img/about_page_main.jpeg" />
+      <Skills />
     </Container>
   );
 };

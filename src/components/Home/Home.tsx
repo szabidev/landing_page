@@ -7,13 +7,24 @@ import {
 import Title from "../Title/Title";
 import { HomeDescription } from "../../materialStyles/HomeDescription";
 import { HomeImage } from "../../materialStyles/HomeImage";
+import "../../shared/variables.css";
 
 const Home = () => {
   //   const theme = useTheme();
   //   const isLargeScreen = useMediaQuery(theme.breakpoints.up(1920));
 
   return (
-    <Container maxWidth="xl" sx={{ height: "100vh", position: "relative" }}>
+    <Container
+      maxWidth={false}
+      sx={{
+        height: "100vh",
+        position: "relative",
+        padding: 0,
+        backgroundColor: "var(--offwhite)",
+        // maxWidth: "100vw",
+        // width: "100vw",
+      }}
+    >
       <Title />
       <Box>
         <HomeDescription variant="subtitle1">

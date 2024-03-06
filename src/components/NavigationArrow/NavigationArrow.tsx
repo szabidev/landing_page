@@ -1,6 +1,6 @@
 import { NavigationBox } from "../../materialStyles/NavigationBox";
-import "../../shared/variables.css";
 import { NavigationArrow } from "../../materialStyles/NavigationArrow";
+import "../../shared/variables.css";
 
 const NavigationArrowMenu = () => {
   const rotate = {
