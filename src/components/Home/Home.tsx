@@ -22,7 +22,7 @@ const Home = () => {
         padding: 0,
         backgroundColor: "var(--offwhite)",
         // maxWidth: "100vw",
-        // width: "100vw",
+        width: "100%",
       }}
     >
       <Title />

@@ -4,20 +4,52 @@ import { AboutTitle } from "../../materialStyles/AboutTitle";
 import { AboutDescription } from "../../materialStyles/AboutDescription";
 import { AboutImage } from "../../materialStyles/AboutImage";
 import Skills from "../Skills/Skills";
+import { useEffect, useState } from "react";
 
 const About = () => {
-  // TODO FIX GAP BETWEEN CONATINERS, MAXWIDTH ISSUE PROBABLY
+  const [scrollProgress, setScrollProgress] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+      const windowHeight = window.innerHeight;
+      const aboutContainer = document.getElementById("skills-container");
+
+      if (aboutContainer) {
+        const aboutContainerTop = aboutContainer.offsetTop;
+        const aboutContainerHeight = aboutContainer.offsetHeight;
+
+        // Calculate the scroll progress based on the About component's position and height
+        const progress = Math.max(
+          0,
+          Math.min(
+            (scrollY - aboutContainerTop) /
+              (aboutContainerHeight - windowHeight),
+            1
+          )
+        );
+        setScrollProgress(progress);
+      }
+    };
+
+    // Add scroll event listener
+    window.addEventListener("scroll", handleScroll);
+
+    // Clean up the event listener on component unmount
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
     <Container
+      id="about-container"
       maxWidth={false}
       sx={{
         backgroundColor: "#fff",
         position: "relative",
         height: "100vh",
         padding: 0,
-        // ! Temporary fix
-        borderTop: "1px solid transparent",
       }}
     >
       <AboutBox>
@@ -46,7 +78,7 @@ const About = () => {
         </AboutDescription>
       </AboutBox>
       <AboutImage component="img" src="./assets/img/about_page_main.jpeg" />
-      <Skills />
+      <Skills scrollProgress={scrollProgress} />
     </Container>
   );
 };

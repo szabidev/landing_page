@@ -47,7 +47,7 @@ export const HomeImage = styled(Box)<ImageProps>(() => ({
   },
 
   "@media screen and (min-width:2560px)": {
-    left: -90,
+    left: 360,
     height: 970,
   },
 }));

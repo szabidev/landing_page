@@ -1,9 +1,19 @@
-import { Box, Container, Divider, Tooltip, Typography } from "@mui/material";
+import { Box, Container, Divider, Typography } from "@mui/material";
 
-const Skills = () => {
+const Skills = ({ scrollProgress }: any) => {
   // ! Add tooltip component to typography, describing experience with the skill
   return (
-    <Container maxWidth="xl">
+    <Container
+      id="skills-container"
+      maxWidth={false}
+      sx={{
+        width: "700px",
+        margin: 0,
+        marginLeft: "100px",
+        opacity: scrollProgress,
+        transition: "opacity .5s ease-in",
+      }}
+    >
       <Box>
         <Typography>Core Web Technologies</Typography>
         <Divider />

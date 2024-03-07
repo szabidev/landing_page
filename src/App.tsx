@@ -1,3 +1,5 @@
+import { Element } from "react-scroll";
+
 import About from "./components/About/About";
 import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
@@ -6,8 +8,6 @@ import Name from "./components/Name/Name";
 import NavigationArrowMenu from "./components/NavigationArrow/NavigationArrow";
 import Social from "./components/Social/Social";
 
-// ! FIX HOME AND ABOUT PAGE GAPE, ABOUT BORDER TOP GETS RID OF GAP, CHECK CONTAINERS MAXWIDHT PROPERTY
-
 function App() {
   return (
     <div className="App">
@@ -15,8 +15,12 @@ function App() {
       <Social />
       <NavigationArrowMenu />
       <Name />
-      <Home />
-      <About />
+      <Element name="home">
+        <Home />
+      </Element>
+      <Element name="about">
+        <About />
+      </Element>
       <Footer />
     </div>
   );

@@ -6,7 +6,7 @@ const Footer = () => {
   // const theme = useTheme();
   // const isSmallScreen = useMediaQuery(theme.breakpoints.down(400));
 
-  return <FooterContainer />;
+  return <FooterContainer maxWidth={false} />;
 };
 
 export default Footer;

@@ -30,11 +30,11 @@ export const TitleBox = styled(Box)<StyledComponentProps>(() => ({
   },
 
   "@media screen and (min-width:1920px)": {
-    left: -100,
+    left: 30,
   },
 
   "@media screen and (min-width:2560px)": {
     top: 230,
-    left: -400,
+    left: 30,
   },
 }));
