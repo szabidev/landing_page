@@ -5,7 +5,7 @@ import "../shared/variables.css";
 
 export const AboutImage = styled(Box)<ImageProps>(() => ({
   position: "absolute",
-  bottom: 0,
+  top: 305,
   right: 166,
   width: 400,
 }));

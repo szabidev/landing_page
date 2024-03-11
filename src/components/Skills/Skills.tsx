@@ -1,41 +1,61 @@
-import { Box, Container, Divider, Typography } from "@mui/material";
+import { Typography } from "@mui/material";
+import {
+  Timeline,
+  TimelineConnector,
+  TimelineContent,
+  TimelineItem,
+  TimelineOppositeContent,
+  TimelineSeparator,
+} from "@mui/lab";
+import { SkillsContainer } from "../../materialStyles/SkillsContainer";
+import { stack } from "../../shared/variables";
+import "../../shared/variables.css";
 
-const Skills = ({ scrollProgress }: any) => {
-  // ! Add tooltip component to typography, describing experience with the skill
+const Skills = () => {
+  const contentStyle = {
+    fontSize: "22px",
+    fontFamily: "Open Sans, sans serif",
+  };
+
+  // ! CHECK OUT MATERIAL UI TRANSITIONS PROPERTY TO FADE IN SLOWLY THE CONTENT STEP BY STEP
+
   return (
-    <Container
-      id="skills-container"
-      maxWidth={false}
-      sx={{
-        width: "700px",
-        margin: 0,
-        marginLeft: "100px",
-        opacity: scrollProgress,
-        transition: "opacity .5s ease-in",
-      }}
-    >
-      <Box>
-        <Typography>Core Web Technologies</Typography>
-        <Divider />
-        <Typography>Libraries and Frameworks</Typography>
-        <Divider />
-        <Typography>Design and UI/UX Tools</Typography>
-        <Divider />
-        <Typography>Testing</Typography>
-        <Divider />
-        <Typography>Backend and Database</Typography>
-        <Divider />
-        <Typography>API Development</Typography>
-        <Divider />
-        <Typography>Version Control</Typography>
-        <Divider />
-        <Typography>Build and Package Management</Typography>
-        <Divider />
-        <Typography>Web Optimization and Performance</Typography>
-      </Box>
-      <Divider />
-      <Box></Box>
-    </Container>
+    <SkillsContainer id="skills-container" maxWidth={false}>
+      <Typography
+        align="center"
+        variant="h3"
+        // ? MAYBE CHANGE COLOR
+        sx={{ fontFamily: "Open Sans,sans serif", color: "var(--green)" }}
+      >
+        TITLE
+      </Typography>
+      <Timeline>
+        {stack.map((skill) => (
+          <TimelineItem>
+            <TimelineOppositeContent
+              sx={{
+                ...contentStyle,
+                fontWeight: 500,
+              }}
+            >
+              {skill.title}
+            </TimelineOppositeContent>
+            <TimelineSeparator>
+              {/* // ? MAYBE CHANGE THE COLOR */}
+              <TimelineConnector sx={{ backgroundColor: "var(--green)" }} />
+            </TimelineSeparator>
+            <TimelineContent
+              sx={{
+                ...contentStyle,
+                fontWeight: 300,
+              }}
+            >
+              {skill.tech}
+            </TimelineContent>
+          </TimelineItem>
+        ))}
+      </Timeline>
+    </SkillsContainer>
   );
 };
 

@@ -9,6 +9,7 @@ import NavigationArrowMenu from "./components/NavigationArrow/NavigationArrow";
 import Social from "./components/Social/Social";
 
 function App() {
+  // ! SCROLL SNAPP FOR PAGES
   return (
     <div className="App">
       <Header />

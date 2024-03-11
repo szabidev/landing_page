@@ -1,132 +1,38 @@
-export const stack = {
-  coreTech: [
-    {
-      technology: "JavaScript",
-      tooltipDescription: "",
-    },
-    {
-      technology: "TypeScript",
-      tooltipDescription: "",
-    },
-    {
-      technology: "Html5",
-      tooltipDescription: "",
-    },
-    {
-      technology: "CSS",
-      tooltipDescription: "",
-    },
-  ],
-  libAndFrame: [
-    {
-      technology: "React",
-      tooltipDescription: "",
-    },
-    {
-      technology: "React Router",
-      tooltipDescription: "",
-    },
-    {
-      technology: "Redux",
-      tooltipDescription: "",
-    },
-    {
-      technology: "Redux Toolkit",
-      tooltipDescription: "",
-    },
-    {
-      technology: "Sass",
-      tooltipDescription: "",
-    },
-    {
-      technology: "Vite.js",
-      tooltipDescription: "",
-    },
-    {
-      technology: "Next.js",
-      tooltipDescription: "",
-    },
-  ],
-  design: [
-    {
-      technology: "Figma",
-      tooltipDescription: "",
-    },
-    {
-      technology: "Material UI",
-      tooltipDescription: "",
-    },
-  ],
-  testing: [
-    {
-      technology: "Jest",
-      tooltipDescription: "",
-    },
-    {
-      technology: "React Testing Library",
-      tooltipDescription: "",
-    },
-  ],
-  backend: [
-    {
-      technology: "Node.js",
-      tooltipDescription: "",
-    },
-    {
-      technology: "PostgreSQL",
-      tooltipDescription: "",
-    },
-  ],
-  api: [
-    {
-      technology: "REST API",
-      tooltipDescription: "",
-    },
-  ],
-  versionControl: [
-    {
-      technology: "Git",
-      tooltipDescription: "",
-    },
-    {
-      technology: "GitHub",
-      tooltipDescription: "",
-    },
-    {
-      technology: "Bitbucket",
-      tooltipDescription: "",
-    },
-  ],
-  build: [
-    {
-      technology: "Webpack",
-      tooltipDescription: "",
-    },
-    {
-      technology: "npm",
-      tooltipDescription: "",
-    },
-    {
-      technology: "yarn",
-      tooltipDescription: "",
-    },
-  ],
-  performance: [
-    {
-      technology: "SEO",
-      tooltipDescription: "",
-    },
-    {
-      technology: "Lighthouse",
-      tooltipDescription: "",
-    },
-    {
-      technology: "BrowserStack",
-      tooltipDescription: "",
-    },
-    {
-      technology: "Responsive Design",
-      tooltipDescription: "",
-    },
-  ],
-};
+export const stack = [
+  {
+    title: "Core Web Technologies",
+    tech: "JavaScript, TypeScript, HTML5, CSS",
+  },
+  {
+    title: "Frameworks and Libraries",
+    tech: "React.js, React Router, Redux, Redux Toolkit, Vite.js, Next.js, Sass",
+  },
+  {
+    title: "Design and UI/UX Tools",
+    tech: "Material UI, Figma, Photoshop",
+  },
+  {
+    title: "Testing",
+    tech: "Jest, React Testing Library, Vitest",
+  },
+  {
+    title: "Backend and Database",
+    tech: "Node.js, Express.js, PostgreSQL",
+  },
+  {
+    title: "API Development",
+    tech: "REST API",
+  },
+  {
+    title: "Version Control",
+    tech: "Git, GitHub, BitBucket",
+  },
+  {
+    title: "Build and Package Management",
+    tech: "Webpack, npm, yarn",
+  },
+  {
+    title: "Web Optimization and Performance",
+    tech: "SEO, Lighthouse, BrowserStack, Responsive Design",
+  },
+];

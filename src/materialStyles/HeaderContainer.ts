@@ -13,9 +13,15 @@ export const HeaderContainer = styled(Container)<StyledComponentProps>(() => ({
     padding: "20px 0",
     margin: "0",
     maxWidth: "100%",
+    opacity: 1,
+    transition: "opacity 0.3s ease-in-out",
 
     "@media screen and (max-width:768px)": {
       padding: "0",
     },
+  },
+
+  "&.MuiContainer-root .hidden": {
+    opacity: 0,
   },
 }));
