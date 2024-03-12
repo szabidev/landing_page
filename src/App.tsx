@@ -7,6 +7,8 @@ import Home from "./components/Home/Home";
 import Name from "./components/Name/Name";
 import NavigationArrowMenu from "./components/NavigationArrow/NavigationArrow";
 import Social from "./components/Social/Social";
+import Projects from "./components/Projects/Projects";
+import Contact from "./components/Contact/Contact";
 
 function App() {
   // ! SCROLL SNAPP FOR PAGES
@@ -21,6 +23,12 @@ function App() {
       </Element>
       <Element name="about">
         <About />
+      </Element>
+      <Element name="projects">
+        <Projects />
+      </Element>
+      <Element name="contact">
+        <Contact />
       </Element>
       <Footer />
     </div>

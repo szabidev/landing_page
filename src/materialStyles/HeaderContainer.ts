@@ -1,13 +1,12 @@
 import { Container } from "@mui/material";
 import { styled, StyledComponentProps } from "@mui/material/styles";
+import { flex } from "../shared/variables";
 
 export const HeaderContainer = styled(Container)<StyledComponentProps>(() => ({
   position: "fixed",
   top: "0",
-  display: "flex",
-  justifyContent: "center",
-  alignItems: "center",
   zIndex: 1,
+  ...flex,
 
   "&.MuiContainer-root": {
     padding: "20px 0",

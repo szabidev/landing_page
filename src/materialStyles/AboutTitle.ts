@@ -7,4 +7,5 @@ export const AboutTitle = styled(Typography)<StyledComponentProps>(() => ({
   fontFamily: "Open sans, sans serif",
   textTransform: "uppercase",
   fontWeight: 500,
+  color: "var(--fontMainColor)",
 }));

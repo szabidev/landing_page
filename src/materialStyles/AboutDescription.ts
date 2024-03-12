@@ -8,6 +8,7 @@ export const AboutDescription = styled(Typography)<StyledComponentProps>(
     fontFamily: "Open Sans, sans serif",
     // ? fontWeight 400 or 500?
     fontWeight: 500,
+    color: "var(--fontMainColor)",
     margin: "15px 0",
   })
 );

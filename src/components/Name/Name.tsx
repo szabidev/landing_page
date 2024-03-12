@@ -1,18 +1,15 @@
-// import { useMediaQuery, useTheme } from "@mui/material";
-import { Link } from "@mui/material";
+import { Link } from "react-scroll";
 import { NameBox } from "../../materialStyles/NameBox";
 import { StyledName } from "../../materialStyles/StyledName";
 import "../../shared/variables.css";
 import "./Name.css";
 
+// TODO CHANGE NAME COMPONENT COLOR ON DIFFERENT PAGES, ON ENTERING IMAGES
+// TODO DECIDE WHETER TO DISPLAY IT OR NOT ON SMALL SCREEN
 const Name = () => {
-  // const theme = useTheme();
-  // const isSmallScreen = useMediaQuery(theme.breakpoints.down(420));
-  // const isLargeScreen = useMediaQuery(theme.breakpoints.up(1920));
-
   return (
     <NameBox>
-      <Link href="#home" sx={{ textDecoration: "none", cursor: "pointer" }}>
+      <Link to="home" smooth>
         <StyledName variant="h1">
           <span className="name-s">S</span>
           <span className="name-z">z</span>

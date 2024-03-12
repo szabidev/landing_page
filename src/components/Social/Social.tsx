@@ -5,6 +5,8 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import { SocialBox } from "../../materialStyles/SocialBox";
 
+// TODO CHANGE COLOR DEPENDING ON CURRENT PAGE SECTION
+
 const Social = () => {
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down(431));

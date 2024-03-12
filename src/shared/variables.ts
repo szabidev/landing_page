@@ -36,3 +36,9 @@ export const stack = [
     tech: "SEO, Lighthouse, BrowserStack, Responsive Design",
   },
 ];
+
+export const flex = {
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+};

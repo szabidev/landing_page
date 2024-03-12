@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-scroll";
+import { Slide } from "@mui/material";
 import { HeaderContainer } from "../../materialStyles/HeaderContainer";
 import { StyledAppBar } from "../../materialStyles/StyledAppBar";
 import "./Header.css";
-import { Slide } from "@mui/material";
 
 const Header = () => {
   const [isVisible, setIsVisible] = useState<boolean>(true);
@@ -36,13 +36,13 @@ const Header = () => {
     <Slide direction="down" in={isVisible} timeout={500}>
       <HeaderContainer maxWidth={false}>
         <StyledAppBar position="sticky" sx={{ boxShadow: "none" }}>
-          <Link smooth={true} className="nav-link" to="about">
+          <Link smooth className="nav-link" to="about">
             About
           </Link>
-          <Link smooth={true} className="nav-link" to="work">
-            Work
+          <Link smooth className="nav-link" to="projects">
+            Projects
           </Link>
-          <Link smooth={true} className="nav-link" to="contact">
+          <Link smooth className="nav-link" to="contact">
             Contact
           </Link>
         </StyledAppBar>

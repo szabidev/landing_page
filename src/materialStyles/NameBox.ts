@@ -7,11 +7,14 @@ export const NameBox = styled(Box)<StyledComponentProps>(() => ({
   width: "fit-content",
   // ! Check position fixed / absolute
   position: "fixed",
-  bottom: 60,
+  bottom: 25,
   right: 40,
   zIndex: 1001,
 
   "@media screen and (max-width: 430px)": {
     right: 20,
+  },
+  "@media screen and (min-width: 1601px)": {
+    bottom: 60,
   },
 }));

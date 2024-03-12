@@ -5,7 +5,8 @@ import { AboutDescription } from "../../materialStyles/AboutDescription";
 import { AboutImage } from "../../materialStyles/AboutImage";
 import Skills from "../Skills/Skills";
 import { useMediaQuery } from "@mui/material";
-
+import { SectionTitle } from "../../materialStyles/SectionTitle";
+import "../../shared/variables.css";
 const About = () => {
   const isSmallScreen = useMediaQuery("(max-width:800px)");
 
@@ -14,12 +15,14 @@ const About = () => {
       id="about-container"
       maxWidth={false}
       sx={{
-        backgroundColor: "#fff",
+        backgroundColor: "var(--white)",
         position: "relative",
-        // height: "100vh",
         padding: 0,
       }}
     >
+      <SectionTitle variant="h1" sx={{ color: "var(--fontMainColor)" }}>
+        About
+      </SectionTitle>
       <AboutBox>
         <AboutTitle variant="body1">Hi There, I'm Szabi,</AboutTitle>
         <AboutDescription variant="body1" sx={{ marginTop: "0" }}>

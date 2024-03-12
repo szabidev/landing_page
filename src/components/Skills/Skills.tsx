@@ -1,4 +1,4 @@
-import { Typography } from "@mui/material";
+import { Fade, Typography } from "@mui/material";
 import {
   Timeline,
   TimelineConnector,
@@ -27,34 +27,36 @@ const Skills = () => {
         // ? MAYBE CHANGE COLOR
         sx={{ fontFamily: "Open Sans,sans serif", color: "var(--green)" }}
       >
-        TITLE
+        Technologies
       </Typography>
-      <Timeline>
-        {stack.map((skill) => (
-          <TimelineItem>
-            <TimelineOppositeContent
-              sx={{
-                ...contentStyle,
-                fontWeight: 500,
-              }}
-            >
-              {skill.title}
-            </TimelineOppositeContent>
-            <TimelineSeparator>
-              {/* // ? MAYBE CHANGE THE COLOR */}
-              <TimelineConnector sx={{ backgroundColor: "var(--green)" }} />
-            </TimelineSeparator>
-            <TimelineContent
-              sx={{
-                ...contentStyle,
-                fontWeight: 300,
-              }}
-            >
-              {skill.tech}
-            </TimelineContent>
-          </TimelineItem>
-        ))}
-      </Timeline>
+      <Fade appear in timeout={200}>
+        <Timeline>
+          {stack.map((skill) => (
+            <TimelineItem key={skill.title}>
+              <TimelineOppositeContent
+                sx={{
+                  ...contentStyle,
+                  fontWeight: 500,
+                }}
+              >
+                {skill.title}
+              </TimelineOppositeContent>
+              <TimelineSeparator>
+                {/* // ? MAYBE CHANGE THE COLOR */}
+                <TimelineConnector sx={{ backgroundColor: "var(--green)" }} />
+              </TimelineSeparator>
+              <TimelineContent
+                sx={{
+                  ...contentStyle,
+                  fontWeight: 300,
+                }}
+              >
+                {skill.tech}
+              </TimelineContent>
+            </TimelineItem>
+          ))}
+        </Timeline>
+      </Fade>
     </SkillsContainer>
   );
 };

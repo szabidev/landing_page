@@ -4,12 +4,13 @@
   font-family: "Open sans", sans serif;
   color: var(--fontMainColor);
   text-decoration: "none";
-  letter-spacing: 1px;
-  text-transform: "uppercase";
+  letter-spacing: 5px;
   /* ? or fontWeight: 800 - or just on small/large screen */
   font-weight: 600;
   font-size: 16px;
   margin: 0;
+  text-transform: uppercase;
+
   z-index: 100;
 }
 @media screen and (min-width: 421px) and (max-width: 800px) {
