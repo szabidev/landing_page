@@ -3,7 +3,6 @@ import ProjectCard from "../ProjectCard/ProjectCard";
 import { SectionTitle } from "../../materialStyles/SectionTitle";
 import { flex } from "../../shared/variables";
 import "../../shared/variables.css";
-import { Fade } from "react-awesome-reveal";
 
 const Projects = () => {
   return (
@@ -21,13 +20,10 @@ const Projects = () => {
           marginRight: "100px",
         }}
       >
-        {/* // ! CHECK WHY ANIMATION DOES NOT FADE IN SLOWLY - reat-awesome-reveal */}
-        <Fade cascade>
-          <ProjectCard />
-          <ProjectCard />
-          <ProjectCard />
-          <ProjectCard />
-        </Fade>
+        <ProjectCard />
+        <ProjectCard />
+        <ProjectCard />
+        <ProjectCard />
       </Box>
     </Container>
   );

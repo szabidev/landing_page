@@ -1,52 +1,16 @@
+import { useEffect, useRef, useState } from "react";
 import {
   Button,
   CardActions,
   CardContent,
   CardMedia,
   Typography,
-} from "@mui/material";
-import {
-  createTheme,
   ThemeProvider,
-  alpha,
-  getContrastRatio,
-} from "@mui/material/styles";
+} from "@mui/material";
 import { ProjectCardContainer } from "../../materialStyles/ProjectCard";
 import { flex } from "../../shared/variables";
 import "../../shared/variables.css";
-import { useEffect, useRef, useState } from "react";
-
-declare module "@mui/material/styles" {
-  interface Palette {
-    offWhite: Palette["primary"];
-  }
-
-  interface PaletteOptions {
-    offWhite?: PaletteOptions["primary"];
-  }
-}
-
-// Update the Button's color options to include a violet option
-declare module "@mui/material/Button" {
-  interface ButtonPropsColorOverrides {
-    offWhite: true;
-  }
-}
-
-const offWhiteBase = "#eae6dc";
-const offWhiteMain = alpha(offWhiteBase, 0.7);
-
-const theme = createTheme({
-  palette: {
-    offWhite: {
-      main: offWhiteMain,
-      light: alpha(offWhiteBase, 0.5),
-      dark: alpha(offWhiteBase, 0.9),
-      contrastText:
-        getContrastRatio(offWhiteMain, "#fff") > 4.5 ? "#fff" : "#111",
-    },
-  },
-});
+import { buttonTheme } from "../../shared/theme";
 
 const ProjectCard = () => {
   const fontStyle = {
@@ -126,7 +90,7 @@ const ProjectCard = () => {
         </Typography>
         <CardActions sx={{ width: "100%", ...flex }}>
           {/* // TODO WORK ON HOVER EFFECT, DISPLAY OTHER CONTENT ON CLICK, DECIDE ON EFFECT  */}
-          <ThemeProvider theme={theme}>
+          <ThemeProvider theme={buttonTheme}>
             <Button
               onClick={displayInfo}
               size="medium"
@@ -137,7 +101,6 @@ const ProjectCard = () => {
                 fontSize: "20px",
                 fontWeight: 300,
                 color: "var(--fontMainColor)",
-                // backgroundColor: "var(--offwhite)",
               }}
             >
               Click here for more details

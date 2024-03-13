@@ -13,7 +13,7 @@ import "../../shared/variables.css";
 
 const Skills = () => {
   const contentStyle = {
-    fontSize: "22px",
+    fontSize: "20px",
     fontFamily: "Open Sans, sans serif",
   };
 
