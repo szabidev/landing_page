@@ -9,9 +9,10 @@ import {
 import ContactAnimation from "../ContactAnimation/ContactAnimation";
 import { SectionTitle } from "../../materialStyles/SectionTitle";
 import { ContactInput } from "../../materialStyles/ContactInput";
-import "../../shared/variables.css";
 import { flex } from "../../shared/variables";
 import { buttonTheme } from "../../shared/theme";
+import "../../shared/variables.css";
+import contact from "../../shared/json/contact.json";
 
 const Contact = () => {
   const [name, setName] = useState<string>("");
@@ -50,7 +51,7 @@ const Contact = () => {
       }}
     >
       <SectionTitle variant="h1" sx={{ color: "var(--offwhite)" }}>
-        Contact
+        {contact.contactTitle}
       </SectionTitle>
       <Box sx={{ ...flex, width: "100%", paddingTop: "60px" }}>
         <Typography
@@ -65,10 +66,10 @@ const Contact = () => {
             color: "var(--offwhite)",
           }}
         >
-          <span>Want to hire me? </span>
-          <span>Need a cocktail recipe?</span>
-          <span>Or have an idea?</span>
-          <span>Send a message...</span>
+          <span>{contact.contactText.hire}</span>
+          <span>{contact.contactText.recipe}</span>
+          <span>{contact.contactText.idea}</span>
+          <span>{contact.contactText.message}</span>
         </Typography>
         {/* // ! Style the inputs seperately with styled function, to change color and font size */}
 
@@ -90,7 +91,7 @@ const Contact = () => {
               width: "80%",
             }}
             required
-            label="Name"
+            label={contact.contactInput.name}
             value={name}
             onChange={handleNameChange}
             autoComplete="off"
@@ -101,7 +102,7 @@ const Contact = () => {
           <ContactInput
             sx={{ width: "80%" }}
             required
-            label="Email address"
+            label={contact.contactInput.email}
             value={email}
             onChange={handleEmailChange}
             autoComplete="off"
@@ -111,7 +112,7 @@ const Contact = () => {
           />
           <ContactInput
             sx={{ width: "80%" }}
-            label="Message"
+            label={contact.contactInput.message}
             required
             multiline
             rows={4}
@@ -134,12 +135,12 @@ const Contact = () => {
                 color: "var(--offwhite)",
               }}
             >
-              Send message
+              {contact.contactBtn}
             </Button>
           </ThemeProvider>
         </Box>
       </Box>
-      {isSubmitted && <ContactAnimation text="Thank you for your message!" />}
+      {isSubmitted && <ContactAnimation text={contact.contactAnimation} />}
     </Container>
   );
 };

@@ -4,7 +4,7 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import { SocialBox } from "../../materialStyles/SocialBox";
-
+import { links } from "../../shared/variables";
 // TODO CHANGE COLOR DEPENDING ON CURRENT PAGE SECTION
 
 const Social = () => {
@@ -30,28 +30,16 @@ const Social = () => {
 
   return (
     <SocialBox>
-      <Link
-        href="https://www.linkedin.com/in/szabolcs-vojtek/"
-        target="_blank"
-        sx={linkStyle}
-      >
+      <Link href={links.linkedIn} target="_blank" sx={linkStyle}>
         <LinkedInIcon sx={iconStyle} />
       </Link>
-      <Link
-        href="https://www.facebook.com/szabi.vojtek"
-        target="_blank"
-        sx={linkStyle}
-      >
+      <Link href={links.facebook} target="_blank" sx={linkStyle}>
         <FacebookIcon sx={iconStyle} />
       </Link>
-      <Link
-        href="https://www.instagram.com/szabi.vojtek/"
-        target="_blank"
-        sx={linkStyle}
-      >
+      <Link href={links.instagram} target="_blank" sx={linkStyle}>
         <InstagramIcon sx={iconStyle} />
       </Link>
-      <Link href="https://github.com/szabidev" target="_blank" sx={linkStyle}>
+      <Link href={links.gitHub} target="_blank" sx={linkStyle}>
         <GitHubIcon sx={iconStyle} />
       </Link>
     </SocialBox>

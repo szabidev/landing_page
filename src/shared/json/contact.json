@@ -1,0 +1,16 @@
+{
+  "contactTitle": "Contact",
+  "contactText": {
+    "hire": "Want to hire me?",
+    "recipe": "Need a cocktail recipe?",
+    "idea": "Or have an idea?",
+    "message": "Send a message..."
+  },
+  "contactInput": {
+    "name": "Name",
+    "email": "Email address",
+    "message": "Message"
+  },
+  "contactBtn": "Send message",
+  "contactAnimation": "Thank you for your message!"
+}

@@ -4,6 +4,7 @@ import { Slide } from "@mui/material";
 import { HeaderContainer } from "../../materialStyles/HeaderContainer";
 import { StyledAppBar } from "../../materialStyles/StyledAppBar";
 import "./Header.css";
+import cta from "../../shared/json/cta.json";
 
 const Header = () => {
   const [isVisible, setIsVisible] = useState<boolean>(true);
@@ -37,13 +38,13 @@ const Header = () => {
       <HeaderContainer maxWidth={false}>
         <StyledAppBar position="sticky" sx={{ boxShadow: "none" }}>
           <Link smooth className="nav-link" to="about">
-            About
+            {cta.header.about}
           </Link>
           <Link smooth className="nav-link" to="projects">
-            Projects
+            {cta.header.projects}
           </Link>
           <Link smooth className="nav-link" to="contact">
-            Contact
+            {cta.header.contact}
           </Link>
         </StyledAppBar>
       </HeaderContainer>

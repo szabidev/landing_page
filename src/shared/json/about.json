@@ -1,0 +1,10 @@
+{
+  "aboutSection": "About",
+  "aboutTitle": "Hi There, I'm Szabi,",
+  "aboutFirstParagraph": "a frontend developer - fullstack wannabe - with a passion for pixels and a knack for turning code into something awesome. I've been navigating the web development world for the past two years, and let me tell you, it's been one heck of a ride!",
+  "aboutSecondParagraph": "In my previous life, I spent over a decade perfecting the art of mixing and shaking as a bartender. Yep, I traded in my cocktail shaker for a keyboard, but don't worry – I can still whip up a mean CSS cocktail with a splash of JavaScript flair!",
+  "aboutThirdPragraph": "When I'm not creating stunning websites, you'll find me embracing my role as a devoted home cook. My culinary journey involves constant flavor experimentation, mastering new recipes, and, on occasion, triggering the smoke alarm.",
+  "aboutFourthParagraph": "Curiosity is my middle name, and I thrive on the thrill of learning something new every day.",
+  "aboutImage": "./assets/img/about_page_main.jpeg",
+  "aboutImageAlt": "Szabi in a brown jacket"
+}

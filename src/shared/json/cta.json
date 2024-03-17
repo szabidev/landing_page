@@ -1,0 +1,24 @@
+{
+  "header": {
+    "about": "about",
+    "projects": "projects",
+    "contact": "contact"
+  },
+  "title": {
+    "frontend": "Frontend",
+    "dev": "Developer"
+  },
+  "name": {
+    "v": "v",
+    "o": "o",
+    "j": "j",
+    "t": "t",
+    "e": "e",
+    "k": "k",
+    "s": "s",
+    "z": "z",
+    "a": "a",
+    "b": "b",
+    "i": "i"
+  }
+}

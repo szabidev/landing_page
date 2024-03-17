@@ -1,12 +1,13 @@
-import { Container } from "@mui/material";
+import { Container, useMediaQuery } from "@mui/material";
 import { AboutBox } from "../../materialStyles/AboutBox";
 import { AboutTitle } from "../../materialStyles/AboutTitle";
 import { AboutDescription } from "../../materialStyles/AboutDescription";
 import { AboutImage } from "../../materialStyles/AboutImage";
-import Skills from "../Skills/Skills";
-import { useMediaQuery } from "@mui/material";
 import { SectionTitle } from "../../materialStyles/SectionTitle";
+import Skills from "../Skills/Skills";
 import "../../shared/variables.css";
+import about from "../../shared/json/about.json";
+
 const About = () => {
   const isSmallScreen = useMediaQuery("(max-width:800px)");
 
@@ -21,35 +22,29 @@ const About = () => {
       }}
     >
       <SectionTitle variant="h1" sx={{ color: "var(--fontMainColor)" }}>
-        About
+        {about.aboutSection}
       </SectionTitle>
       <AboutBox>
-        <AboutTitle variant="body1">Hi There, I'm Szabi,</AboutTitle>
+        <AboutTitle variant="body1">{about.aboutTitle}</AboutTitle>
         <AboutDescription variant="body1" sx={{ marginTop: "0" }}>
-          a frontend developer - fullstack wannabe - with a passion for pixels
-          and a knack for turning code into something awesome. I've been
-          navigating the web development world for the past two years, and let
-          me tell you, it's been one heck of a ride!
+          {about.aboutFirstParagraph}
         </AboutDescription>
         <AboutDescription variant="body1">
-          In my previous life, I spent over a decade perfecting the art of
-          mixing and shaking as a bartender. Yep, I traded in my cocktail shaker
-          for a keyboard, but don't worry – I can still whip up a mean CSS
-          cocktail with a splash of JavaScript flair!
+          {about.aboutSecondParagraph}
         </AboutDescription>
         <AboutDescription variant="body1">
-          When I'm not creating stunning websites, you'll find me embracing my
-          role as a devoted home cook. My culinary journey involves constant
-          flavor experimentation, mastering new recipes, and, on occasion,
-          triggering the smoke alarm.
+          {about.aboutThirdPragraph}
         </AboutDescription>
         <AboutDescription variant="body1">
-          Curiosity is my middle name, and I thrive on the thrill of learning
-          something new every day.
+          {about.aboutFourthParagraph}
         </AboutDescription>
       </AboutBox>
       {!isSmallScreen && (
-        <AboutImage component="img" src="./assets/img/about_page_main.jpeg" />
+        <AboutImage
+          component="img"
+          src={about.aboutImage}
+          alt={about.aboutImageAlt}
+        />
       )}
       <Skills />
     </Container>

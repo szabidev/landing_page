@@ -6,7 +6,7 @@ import { useState } from "react";
 
 // TODO CHANGE COLORS AS THE PAGE IS SCROLLED
 const NavigationArrowMenu = () => {
-  const sectionNames = ["home", "about", "projects", "contact"];
+  const sectionNames: string[] = ["home", "about", "projects", "contact"];
   const [currentSectionIndex, setCurrentSectionIndex] = useState<number>(0);
 
   const handleScrollTo = (index: number) => {

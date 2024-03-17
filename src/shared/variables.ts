@@ -1,3 +1,16 @@
+export const flex = {
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+};
+
+export const links = Object.freeze({
+  linkedIn: "https://www.linkedin.com/in/szabolcs-vojtek/",
+  facebook: "https://www.facebook.com/szabi.vojtek",
+  instagram: "https://www.instagram.com/szabi.vojtek/",
+  gitHub: "https://github.com/szabidev",
+});
+
 export const stack = [
   {
     title: "Core Web Technologies",
@@ -36,9 +49,3 @@ export const stack = [
     tech: "SEO, Lighthouse, BrowserStack, Responsive Design",
   },
 ];
-
-export const flex = {
-  display: "flex",
-  justifyContent: "center",
-  alignItems: "center",
-};
