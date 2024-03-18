@@ -12,14 +12,14 @@ export const SocialBox = styled(Box)(() => ({
   left: "calc(50% - 75px)",
   zIndex: 1002,
 
-  "@media screen and (max-width: 430px)": {
+  "@media screen and (max-width: 431px)": {
     color: "#eae6dc",
     bottom: 10,
     top: "auto",
     left: 15,
   },
 
-  "@media screen and (min-width: 431px) and (max-width:768px)": {
+  "@media screen and (min-width: 432px) and (max-width:768px)": {
     color: "#eae6dc",
     top: 15,
     right: 20,

@@ -3,7 +3,6 @@ import { styled } from "@mui/material/styles";
 import "../shared/variables.css";
 
 export const ContactInput = styled(TextField)(() => ({
-  // ! STYLE THE BORDER OF THE INPUTS WHEN ERROR CLASS AND FOCUSED CLASS IS ON
   fontFamily: "Open Sans, sans serif",
   fontWeight: 700,
   "& MuiInputBase-root": {
@@ -29,13 +28,12 @@ export const ContactInput = styled(TextField)(() => ({
       borderColor: "var(--fontMainColor)",
       fontWeight: 600,
     },
+    "&.Mui-error fieldset ": {
+      borderColor: "var(--error)",
+    },
   },
 
   "&.MuiOutlinedInput-notchedOutline": {
     fontWeight: 700,
-  },
-
-  "&.Mui-error .MuiOutlinedInput-notchedOutline": {
-    borderColor: "green",
   },
 }));

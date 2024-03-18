@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useForm, FieldValues } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import {
   Container,
   Box,
@@ -15,7 +15,7 @@ import { flex } from "../../shared/variables";
 import contact from "../../shared/json/contact.json";
 import "../../shared/variables.css";
 
-interface FormValues extends FieldValues {
+interface FormValues {
   name: string;
   email: string;
   message: string;

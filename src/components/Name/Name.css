@@ -21,16 +21,3 @@
 }
 
 /* ! DECIDE ON COLOR CHANGES ON TRANSITIONS */
-
-@media screen and (max-width: 390px) {
-  .name-v,
-  .name-o {
-    color: var(--fontMainColor);
-  }
-}
-
-@media screen and (min-width: 429px) and (max-width: 500px) {
-  .name-s {
-    color: var(--offwhite);
-  }
-}
