@@ -1,4 +1,5 @@
-import { SetStateAction, useState } from "react";
+import { useState } from "react";
+import { useForm, FieldValues } from "react-hook-form";
 import {
   Container,
   Box,
@@ -9,37 +10,48 @@ import {
 import ContactAnimation from "../ContactAnimation/ContactAnimation";
 import { SectionTitle } from "../../materialStyles/SectionTitle";
 import { ContactInput } from "../../materialStyles/ContactInput";
-import { flex } from "../../shared/variables";
 import { buttonTheme } from "../../shared/theme";
-import "../../shared/variables.css";
+import { flex } from "../../shared/variables";
 import contact from "../../shared/json/contact.json";
+import "../../shared/variables.css";
+
+interface FormValues extends FieldValues {
+  name: string;
+  email: string;
+  message: string;
+}
 
 const Contact = () => {
-  const [name, setName] = useState<string>("");
-  const [email, setEmail] = useState<string>("");
-  const [message, setMessage] = useState<string>("");
-  const [isSubmitted, setIsSubmitted] = useState<boolean>(true);
+  const [isSubmitted, setIsSubmitted] = useState<boolean>(false);
+  const form = useForm<FormValues>({
+    defaultValues: {
+      name: "",
+      email: "",
+      message: "",
+    },
+  });
+  const { register, handleSubmit, formState, reset } = form;
+  const { errors } = formState;
 
-  const handleNameChange = (e: {
-    target: { value: SetStateAction<string> };
-  }) => {
-    setName(e.target.value);
-  };
+  const onSubmit = async (values: FormValues) => {
+    try {
+      const response = await fetch("http://localhost:5000/submit-form", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(values),
+      });
 
-  const handleEmailChange = (e: {
-    target: { value: SetStateAction<string> };
-  }) => {
-    setEmail(e.target.value);
-  };
-
-  const handleMessageChange = (e: {
-    target: { value: SetStateAction<string> };
-  }) => {
-    setMessage(e.target.value);
-  };
-
-  const handleSubmit = () => {
-    console.log("submitted");
+      if (response.ok) {
+        setIsSubmitted(true);
+        reset();
+      } else {
+        console.error("Form submission failed:", response.statusText);
+      }
+    } catch (error) {
+      console.error("Form submission failed:", error);
+    }
   };
 
   return (
@@ -74,8 +86,8 @@ const Contact = () => {
         {/* // ! Style the inputs seperately with styled function, to change color and font size */}
 
         <Box
-          onSubmit={handleSubmit}
           component={"form"}
+          onSubmit={handleSubmit(onSubmit)}
           sx={{
             ...flex,
             flexDirection: "column",
@@ -90,40 +102,45 @@ const Contact = () => {
             sx={{
               width: "80%",
             }}
-            required
             label={contact.contactInput.name}
-            value={name}
-            onChange={handleNameChange}
             autoComplete="off"
             InputProps={{
-              sx: { fontWeight: 600, fontFamily: "Open Sans,sans serif" },
+              sx: {
+                fontWeight: 600,
+                fontFamily: "Open Sans,sans serif",
+                color: "var(--fontMainColor)",
+              },
             }}
+            {...register("name", { required: "Name is required" })}
+            error={!!errors.name}
+            helperText={errors.name?.message}
           />
           <ContactInput
             sx={{ width: "80%" }}
-            required
             label={contact.contactInput.email}
-            value={email}
-            onChange={handleEmailChange}
             autoComplete="off"
             InputProps={{
               sx: { fontWeight: 600, fontFamily: "Open Sans,sans serif" },
             }}
+            {...register("email", { required: "Email is required" })}
+            error={!!errors.email}
+            helperText={errors.email?.message}
           />
           <ContactInput
             sx={{ width: "80%" }}
             label={contact.contactInput.message}
-            required
             multiline
             rows={4}
-            value={message}
-            onChange={handleMessageChange}
             InputProps={{
               sx: { fontWeight: 600, fontFamily: "Open Sans,sans serif" },
             }}
+            {...register("message", { required: "Message is required" })}
+            error={!!errors.message}
+            helperText={errors.message?.message}
           />
           <ThemeProvider theme={buttonTheme}>
             <Button
+              type="submit"
               color="green"
               size="medium"
               variant="contained"
