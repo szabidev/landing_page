@@ -9,6 +9,7 @@ export const NameBox = styled(Box)<StyledComponentProps>(() => ({
   bottom: 25,
   right: 40,
   zIndex: 1001,
+  cursor: "pointer",
 
   "@media screen and (max-width: 431px)": {
     right: 20,

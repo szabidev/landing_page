@@ -1,19 +1,15 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-import {
-  Container,
-  Box,
-  Typography,
-  Button,
-  ThemeProvider,
-} from "@mui/material";
-import ContactAnimation from "../ContactAnimation/ContactAnimation";
+import { Container, Button, ThemeProvider } from "@mui/material";
 import { SectionTitle } from "../../materialStyles/SectionTitle";
+import { ContactDescription } from "../../materialStyles/ContactDescription";
+import { ContactBox } from "../../materialStyles/ContactBox";
 import { ContactInput } from "../../materialStyles/ContactInput";
+import ContactAnimation from "../ContactAnimation/ContactAnimation";
 import { buttonTheme } from "../../shared/theme";
-import { flex } from "../../shared/variables";
-import contact from "../../shared/json/contact.json";
+import { FormBox } from "../../materialStyles/FormBox";
 import "../../shared/variables.css";
+import contact from "../../shared/json/contact.json";
 
 interface FormValues {
   name: string;
@@ -58,46 +54,22 @@ const Contact = () => {
     <Container
       maxWidth={false}
       sx={{
-        height: "100vh",
+        minHeight: "100vh",
         backgroundColor: "var(--green)",
+        paddingBottom: "160px",
       }}
     >
       <SectionTitle variant="h1" sx={{ color: "var(--offwhite)" }}>
         {contact.contactTitle}
       </SectionTitle>
-      <Box sx={{ ...flex, width: "100%", paddingTop: "60px" }}>
-        <Typography
-          sx={{
-            display: "flex",
-            justifyContent: "start",
-            flexDirection: "column",
-            width: "50%",
-            fontfamily: "Open Sans, sans serif",
-            fontWeight: 800,
-            fontSize: "48px",
-            color: "var(--offwhite)",
-          }}
-        >
+      <ContactBox>
+        <ContactDescription>
           <span>{contact.contactText.hire}</span>
           <span>{contact.contactText.recipe}</span>
           <span>{contact.contactText.idea}</span>
           <span>{contact.contactText.message}</span>
-        </Typography>
-        {/* // ! Style the inputs seperately with styled function, to change color and font size */}
-
-        <Box
-          component={"form"}
-          onSubmit={handleSubmit(onSubmit)}
-          sx={{
-            ...flex,
-            flexDirection: "column",
-            gap: 6,
-            width: "35%",
-            backgroundColor: "var(--offwhite)",
-            padding: "30px 10px",
-            borderRadius: "50px",
-          }}
-        >
+        </ContactDescription>
+        <FormBox component={"form"} onSubmit={handleSubmit(onSubmit)}>
           <ContactInput
             sx={{
               width: "80%",
@@ -155,8 +127,8 @@ const Contact = () => {
               {contact.contactBtn}
             </Button>
           </ThemeProvider>
-        </Box>
-      </Box>
+        </FormBox>
+      </ContactBox>
       {isSubmitted && <ContactAnimation text={contact.contactAnimation} />}
     </Container>
   );

@@ -1,8 +1,8 @@
-import { Box, Container } from "@mui/material";
+import { Container } from "@mui/material";
 import ProjectCard from "../ProjectCard/ProjectCard";
 import { SectionTitle } from "../../materialStyles/SectionTitle";
-import { flex } from "../../shared/variables";
 import "../../shared/variables.css";
+import { ProjectBox } from "../../materialStyles/ProjectBox";
 
 const Projects = () => {
   return (
@@ -10,21 +10,12 @@ const Projects = () => {
       <SectionTitle variant="h1" sx={{ color: "var(--green)" }}>
         Projects
       </SectionTitle>
-      <Box
-        sx={{
-          ...flex,
-          flexDirection: "column",
-          gap: 12,
-          paddingTop: "100px",
-          paddingBottom: "100px",
-          marginRight: "100px",
-        }}
-      >
+      <ProjectBox>
         <ProjectCard />
         <ProjectCard />
         <ProjectCard />
         <ProjectCard />
-      </Box>
+      </ProjectBox>
     </Container>
   );
 };

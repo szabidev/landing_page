@@ -36,4 +36,8 @@ export const ContactInput = styled(TextField)(() => ({
   "&.MuiOutlinedInput-notchedOutline": {
     fontWeight: 700,
   },
+
+  "@media screen and (min-widht:300px) and (max-width:800px)": {
+    width: "100%",
+  },
 }));

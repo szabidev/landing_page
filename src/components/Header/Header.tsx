@@ -8,26 +8,24 @@ import cta from "../../shared/json/cta.json";
 
 const Header = () => {
   const [isVisible, setIsVisible] = useState<boolean>(true);
-  // TODO WORK ON TIMEOUT SETTING AFTER MORE PAGES ARE ADDED
+
   useEffect(() => {
     let scrollTimeout: NodeJS.Timeout;
 
     const handleScroll = () => {
       setIsVisible(false);
-
       // Reset the scroll timeout on each scroll event
       clearTimeout(scrollTimeout);
 
       // Set a timeout to detect when scrolling stops
       scrollTimeout = setTimeout(() => {
         setIsVisible(true);
-      }, 600); // Adjust the timeout duration as needed
+      }, 600);
     };
 
     // Add scroll event listener
     window.addEventListener("scroll", handleScroll);
 
-    // Clean up the event listener on component unmount
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
@@ -37,13 +35,13 @@ const Header = () => {
     <Slide direction="down" in={isVisible} timeout={500}>
       <HeaderContainer maxWidth={false}>
         <StyledAppBar position="sticky" sx={{ boxShadow: "none" }}>
-          <Link smooth className="nav-link" to="about">
+          <Link isDynamic smooth className="nav-link" to="about">
             {cta.header.about}
           </Link>
-          <Link smooth className="nav-link" to="projects">
+          <Link isDynamic smooth className="nav-link" to="projects">
             {cta.header.projects}
           </Link>
-          <Link smooth className="nav-link" to="contact">
+          <Link isDynamic smooth className="nav-link" to="contact">
             {cta.header.contact}
           </Link>
         </StyledAppBar>

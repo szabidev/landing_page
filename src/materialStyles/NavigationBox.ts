@@ -29,6 +29,12 @@ export const NavigationBox = styled(Box)<StyledComponentProps>(() => ({
     left: "auto",
     top: "auto",
   },
-
-  //TODO MAKE navigation arrows display or hide based on current page
+  "@media screen and (min-width:432) and (max-width: 800px)": {
+    flexDirection: "column",
+    height: "auto",
+    bottom: 60,
+    right: "auto",
+    left: 20,
+    top: "auto",
+  },
 }));

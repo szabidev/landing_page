@@ -23,7 +23,7 @@ export const StyledAppBar = styled(AppBar)<StyledComponentProps>(() => ({
       justifyContent: "start",
     },
     "@media screen and (min-width:1920px)": {
-      width: "30%",
+      width: "50%",
       height: 80,
     },
   },

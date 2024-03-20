@@ -7,19 +7,18 @@ import {
   Typography,
   ThemeProvider,
 } from "@mui/material";
-import { ProjectCardContainer } from "../../materialStyles/ProjectCard";
+import { ProjectCardContainer } from "../../materialStyles/ProjectCardContainer";
 import { flex } from "../../shared/variables";
 import "../../shared/variables.css";
 import { buttonTheme } from "../../shared/theme";
 
 const ProjectCard = () => {
+  const [isVisible, setIsVisible] = useState<boolean | undefined>(false);
+  const cardRef = useRef<HTMLDivElement>(null);
   const fontStyle = {
     fontFamily: "Open Sans, sans serif",
     color: "var(--fontMainColor)",
   };
-
-  const [isVisible, setIsVisible] = useState<boolean | undefined>(false);
-  const cardRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -59,13 +58,21 @@ const ProjectCard = () => {
         transition: "opacity 2s ease-out, transform 1.5s ease-out",
       }}
     >
-      <CardContent sx={{ position: "relative", padding: 0 }}>
+      <CardContent sx={{ padding: 0 }}>
         <CardMedia
           image="/assets/img/about_page_main.jpeg"
           sx={{ height: 444, width: 500 }}
         />
       </CardContent>
-      <CardContent sx={{ height: 420, padding: 0, width: "100%" }}>
+      <CardContent
+        sx={{
+          minHeight: 420,
+          padding: 0,
+          width: "100%",
+          ...flex,
+          flexDirection: "column",
+        }}
+      >
         <Typography
           sx={{ ...fontStyle, padding: "10px 0" }}
           align="center"
@@ -100,7 +107,7 @@ const ProjectCard = () => {
                 ...fontStyle,
                 fontSize: "20px",
                 fontWeight: 300,
-                color: "var(--fontMainColor)",
+                // width: "100%",
               }}
             >
               Click here for more details

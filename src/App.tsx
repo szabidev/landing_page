@@ -9,15 +9,16 @@ import NavigationArrowMenu from "./components/NavigationArrow/NavigationArrow";
 import Social from "./components/Social/Social";
 import Projects from "./components/Projects/Projects";
 import Contact from "./components/Contact/Contact";
+import { useMediaQuery } from "@mui/material";
 
 function App() {
-  // ! SCROLL SNAPP FOR PAGES
+  const isLargeScreen = useMediaQuery("(min-width:800px)");
   return (
-    <div className="App">
+    <div className="App" id="app-container">
       <Header />
       <Social />
       <NavigationArrowMenu />
-      <Name />
+      {isLargeScreen && <Name />}
       <Element name="home">
         <Home />
       </Element>
