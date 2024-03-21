@@ -1,6 +1,13 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
-import { Container, Button, ThemeProvider } from "@mui/material";
+import {
+  Container,
+  Button,
+  ThemeProvider,
+  useMediaQuery,
+  Alert,
+  Collapse,
+} from "@mui/material";
 import { SectionTitle } from "../../materialStyles/SectionTitle";
 import { ContactDescription } from "../../materialStyles/ContactDescription";
 import { ContactBox } from "../../materialStyles/ContactBox";
@@ -8,8 +15,8 @@ import { ContactInput } from "../../materialStyles/ContactInput";
 import ContactAnimation from "../ContactAnimation/ContactAnimation";
 import { buttonTheme } from "../../shared/theme";
 import { FormBox } from "../../materialStyles/FormBox";
-import "../../shared/variables.css";
 import contact from "../../shared/json/contact.json";
+import "../../shared/variables.css";
 
 interface FormValues {
   name: string;
@@ -18,7 +25,11 @@ interface FormValues {
 }
 
 const Contact = () => {
+  const isMobile = useMediaQuery("(max-width:599px)");
+  const notMobile = useMediaQuery("(min-width:600p)x");
   const [isSubmitted, setIsSubmitted] = useState<boolean>(false);
+  const [alertOpen, setAlertOpen] = useState<boolean>(false);
+  const [submissionError, setSubmissionError] = useState<string | null>(null);
   const form = useForm<FormValues>({
     defaultValues: {
       name: "",
@@ -28,6 +39,10 @@ const Contact = () => {
   });
   const { register, handleSubmit, formState, reset } = form;
   const { errors } = formState;
+
+  const handleAlert = () => {
+    setAlertOpen(false);
+  };
 
   const onSubmit = async (values: FormValues) => {
     try {
@@ -42,13 +57,26 @@ const Contact = () => {
       if (response.ok) {
         setIsSubmitted(true);
         reset();
+        setSubmissionError(null);
       } else {
+        setSubmissionError(response.statusText);
         console.error("Form submission failed:", response.statusText);
       }
     } catch (error) {
       console.error("Form submission failed:", error);
     }
   };
+
+  useEffect(() => {
+    if ((isSubmitted || submissionError) && isMobile) {
+      setAlertOpen(true);
+      const timer = setTimeout(() => {
+        setAlertOpen(false);
+        setSubmissionError(null);
+      }, 3000);
+      return () => clearTimeout(timer);
+    }
+  }, [isSubmitted, submissionError, isMobile]);
 
   return (
     <Container
@@ -129,7 +157,21 @@ const Contact = () => {
           </ThemeProvider>
         </FormBox>
       </ContactBox>
-      {isSubmitted && <ContactAnimation text={contact.contactAnimation} />}
+      {isSubmitted && notMobile && (
+        <ContactAnimation text={contact.contactAnimation} />
+      )}
+      {(isSubmitted || submissionError) && isMobile && (
+        <Collapse in={alertOpen} timeout="auto" unmountOnExit>
+          <Alert
+            sx={{ marginTop: "20px" }}
+            variant="filled"
+            severity={submissionError ? "error" : "success"}
+            onClose={handleAlert}
+          >
+            {submissionError ? submissionError : "Message sent"}
+          </Alert>
+        </Collapse>
+      )}
     </Container>
   );
 };

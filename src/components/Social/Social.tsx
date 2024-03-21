@@ -6,42 +6,39 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import { SocialBox } from "../../materialStyles/SocialBox";
 import { links } from "../../shared/variables";
+import "../../shared/variables.css";
 // TODO CHANGE COLOR DEPENDING ON CURRENT PAGE SECTION
 // TODO FIX SCROL EFFECT WHEN SOCIAL IS ON BOTTOM
 
 const Social = () => {
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down(431));
-  const notMobile = !isSmallScreen;
-  // const isTabletScreen = useMediaQuery(
-  //   "(min-widht:432px) and (max-width:800px)"
-  // );
-  // const notMobile = !isSmallScreen && !isTabletScreen;
   const isLargeScreen = useMediaQuery("(min-width:1920px)");
   const [isVisible, setIsVisible] = useState<boolean>(true);
 
   useEffect(() => {
-    let scrollTimeout: NodeJS.Timeout;
+    if (!isSmallScreen) {
+      let scrollTimeout: NodeJS.Timeout;
 
-    const handleScroll = () => {
-      setIsVisible(false);
-      // Reset the scroll timeout on each scroll event
-      clearTimeout(scrollTimeout);
+      const handleScroll = () => {
+        setIsVisible(false);
+        // Reset the scroll timeout on each scroll event
+        clearTimeout(scrollTimeout);
 
-      // Set a timeout to detect when scrolling stops
-      scrollTimeout = setTimeout(() => {
-        setIsVisible(true);
-      }, 600);
-    };
+        // Set a timeout to detect when scrolling stops
+        scrollTimeout = setTimeout(() => {
+          setIsVisible(true);
+        }, 600);
+      };
 
-    // Add scroll event listener
-    window.addEventListener("scroll", handleScroll);
+      // Add scroll event listener
+      window.addEventListener("scroll", handleScroll);
 
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, [notMobile]);
-  console.log(isSmallScreen);
+      return () => {
+        window.removeEventListener("scroll", handleScroll);
+      };
+    }
+  }, [isSmallScreen]);
 
   const linkStyle = {
     textDecoration: "none",
@@ -56,7 +53,7 @@ const Social = () => {
   };
   const iconStyle = {
     fontSize: isLargeScreen ? "50px" : "30px",
-    color: isSmallScreen ? "#eae6dc" : isLargeScreen ? "#0b6353" : "#343332",
+    color: isSmallScreen ? "var(--offwhite)" : "var(--fontMainColor)",
   };
 
   return (

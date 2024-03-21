@@ -12,6 +12,8 @@ import Contact from "./components/Contact/Contact";
 import { useMediaQuery } from "@mui/material";
 
 function App() {
+  // ! useEffect window.scrollY -based on this axis change header color
+
   const isLargeScreen = useMediaQuery("(min-width:800px)");
   return (
     <div className="App" id="app-container">
@@ -19,16 +21,16 @@ function App() {
       <Social />
       <NavigationArrowMenu />
       {isLargeScreen && <Name />}
-      <Element name="home">
+      <Element id="home" name="home">
         <Home />
       </Element>
-      <Element name="about">
+      <Element id="about" name="about">
         <About />
       </Element>
-      <Element name="projects">
+      <Element id="projects" name="projects">
         <Projects />
       </Element>
-      <Element name="contact">
+      <Element id="contact" name="contact">
         <Contact />
       </Element>
       <Footer />

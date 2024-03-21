@@ -5,9 +5,7 @@ import "../../shared/variables.css";
 
 const ContactAnimation = ({ text }: { text: string }) => {
   useEffect(() => {
-    // Get the container element
     const container = document.getElementById("vara-container")!;
-
     // Clear the container's content
     container.innerHTML = "";
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
