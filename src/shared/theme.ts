@@ -20,6 +20,8 @@ declare module "@mui/material/Button" {
   }
 }
 
+// ! CREATE THEME FOR ALERT ALSO
+
 const offWhiteBase = "#eae6dc";
 const offWhiteMain = alpha(offWhiteBase, 0.7);
 const greenBase = "#0b6353";
@@ -39,6 +41,20 @@ export const buttonTheme = createTheme({
       light: alpha(greenBase, 0.5),
       dark: alpha(greenBase, 0.9),
       contrastText: getContrastRatio(greenMain, "#fff") > 4.5 ? "#fff" : "#111",
+    },
+  },
+});
+
+// !
+export const theme = createTheme({
+  components: {
+    MuiAlert: {
+      styleOverrides: {
+        root: {
+          filled: {},
+        },
+      },
+      variants: [],
     },
   },
 });

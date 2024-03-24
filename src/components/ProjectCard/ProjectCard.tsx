@@ -6,18 +6,67 @@ import {
   CardMedia,
   Typography,
   ThemeProvider,
+  Backdrop,
+  Slide,
+  Link,
+  List,
+  ListItem,
 } from "@mui/material";
+import ArrowCircleRightIcon from "@mui/icons-material/ArrowCircleRight";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import LaptopMacIcon from "@mui/icons-material/LaptopMac";
+import ProjectListItem from "../ProjectListItem/ProjectListItem";
 import { ProjectCardContainer } from "../../materialStyles/ProjectCardContainer";
 import { flex } from "../../shared/variables";
-import "../../shared/variables.css";
 import { buttonTheme } from "../../shared/theme";
+import "../../shared/variables.css";
+import { SliderBox } from "../../materialStyles/SliderBox";
 
 const ProjectCard = () => {
+  const [open, setOpen] = useState<boolean>(false);
+  const [slideIn, setSlideIn] = useState<boolean>(false);
   const [isVisible, setIsVisible] = useState<boolean | undefined>(false);
-  const cardRef = useRef<HTMLDivElement>(null);
+  const cardRef = useRef<HTMLDivElement | null>(null);
   const fontStyle = {
     fontFamily: "Open Sans, sans serif",
     color: "var(--fontMainColor)",
+  };
+  const linkStyle = {
+    cursor: "pointer",
+    fontSize: "30px",
+    textAlign: "center",
+    textDecoration: "none",
+    fontWeight: 600,
+    transition: "all 0.2s",
+    display: "flex",
+
+    "&:hover": {
+      transform: "scale(1.1)",
+    },
+  };
+  const iconStyle = {
+    fontSize: 50,
+    position: "absolute",
+    top: 10,
+    right: 20,
+    transition: "all 0.2s",
+    cursor: "pointer",
+
+    "&:hover": {
+      transform: "scale(1.1)",
+    },
+  };
+  // ! MAYBE ADD ZOOM EFFECT TO IMAGE
+
+  const handleModal = () => {
+    console.log("clicked");
+    setOpen(true);
+    setSlideIn(true);
+  };
+
+  const handleCancel = () => {
+    setOpen(false);
+    setSlideIn(false);
   };
 
   useEffect(() => {
@@ -44,11 +93,6 @@ const ProjectCard = () => {
     };
   }, []);
 
-  const displayInfo = () => {
-    console.log("clicked button");
-  };
-
-  // ! WORK ON FADE IN ANIMATION THIS or react-awesome-reveal
   return (
     <ProjectCardContainer
       ref={cardRef}
@@ -63,6 +107,60 @@ const ProjectCard = () => {
           image="/assets/img/about_page_main.jpeg"
           sx={{ height: 444, width: 500 }}
         />
+        <Backdrop
+          open={open}
+          timeout={500}
+          sx={{
+            width: 500,
+            height: 444,
+            display: { ...flex },
+            flexDirection: "column",
+            gap: 6,
+          }}
+        >
+          <List
+            sx={{
+              width: "100%",
+              height: "100%",
+              ...fontStyle,
+              color: "var(--offwhite)",
+              overflow: "auto",
+              paddingTop: 0,
+            }}
+          >
+            <ListItem
+              sx={{
+                ...fontStyle,
+                textDecoration: "underline",
+                textUnderlineOffset: "10px",
+                color: "var(--offwhite)",
+                fontSize: "30px",
+                marginBottom: "20px",
+                fontWeight: 800,
+              }}
+            >
+              Technologies used
+            </ListItem>
+            <ProjectListItem
+              title={"Languages, Frameworks and Libraries"}
+              tech={"TypeScript, React"}
+            />
+
+            <ProjectListItem title={"Backend and Database"} tech="Node.JS" />
+            <ProjectListItem
+              title="Design and UI/UX Tools"
+              tech="Material-UI, Figma"
+            />
+            <ProjectListItem
+              title="Testing"
+              tech="Jest, RTL, BrowserStack, Lighthouse, Responsively"
+            />
+            <ProjectListItem
+              title="Build and Package Managers, Deployment"
+              tech="npm, webpack, Heroku"
+            />
+          </List>
+        </Backdrop>
       </CardContent>
       <CardContent
         sx={{
@@ -96,10 +194,9 @@ const ProjectCard = () => {
           items, with added item filter functionality for swift search.
         </Typography>
         <CardActions sx={{ width: "100%", ...flex }}>
-          {/* // TODO WORK ON HOVER EFFECT, DISPLAY OTHER CONTENT ON CLICK, DECIDE ON EFFECT  */}
           <ThemeProvider theme={buttonTheme}>
             <Button
-              onClick={displayInfo}
+              onClick={handleModal}
               size="medium"
               variant="contained"
               color="offWhite"
@@ -107,12 +204,51 @@ const ProjectCard = () => {
                 ...fontStyle,
                 fontSize: "20px",
                 fontWeight: 300,
-                // width: "100%",
               }}
             >
               Click here for more details
             </Button>
           </ThemeProvider>
+          <Slide direction="left" in={slideIn} timeout={500}>
+            <SliderBox>
+              <Link
+                href="#"
+                target="_blank"
+                sx={{
+                  ...linkStyle,
+                  display: "flex",
+                  justifyContent: "space-evenly",
+                  width: "180px",
+                }}
+              >
+                <LaptopMacIcon
+                  sx={{ fontSize: 50, color: "var(--fontMainColor)" }}
+                />
+                <Typography sx={{ ...fontStyle, fontSize: "30px" }}>
+                  Demo
+                </Typography>
+              </Link>
+              <Link
+                href="#"
+                target="_blank"
+                sx={{
+                  ...linkStyle,
+                  display: "flex",
+                  justifyContent: "space-evenly",
+                  alignItems: "center",
+                  width: "200px",
+                }}
+              >
+                <GitHubIcon
+                  sx={{ fontSize: 50, color: "var(--fontMainColor)" }}
+                />
+                <Typography sx={{ ...fontStyle, fontSize: "30px" }}>
+                  GitHub
+                </Typography>
+              </Link>
+              <ArrowCircleRightIcon sx={iconStyle} onClick={handleCancel} />
+            </SliderBox>
+          </Slide>
         </CardActions>
       </CardContent>
     </ProjectCardContainer>

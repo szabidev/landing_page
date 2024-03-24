@@ -75,7 +75,6 @@ const Skills = () => {
                 {skill.title}
               </TimelineOppositeContent>
               <TimelineSeparator>
-                {/* // ? MAYBE CHANGE THE COLOR */}
                 <TimelineConnector sx={{ backgroundColor: "var(--green)" }} />
               </TimelineSeparator>
               <TimelineContent

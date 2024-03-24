@@ -29,12 +29,12 @@ export const NavigationBox = styled(Box)<StyledComponentProps>(() => ({
     left: "auto",
     top: "auto",
   },
-  "@media screen and (min-width:432) and (max-width: 800px)": {
+  "@media screen and (min-width:432px) and (max-width: 1300px)": {
     flexDirection: "column",
     height: "auto",
     bottom: 60,
     right: "auto",
-    left: 20,
+    left: 10,
     top: "auto",
   },
 }));

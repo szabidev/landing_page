@@ -13,6 +13,10 @@ export const StyledName = styled(Typography)<StyledComponentProps>(() => ({
     fontSize: "56px",
   },
 
+  "@media screen and (min-width:800px) and (max-width:1400px)": {
+    fontSize: "60px",
+  },
+
   "@media screen and (min-width:2560px)": {
     fontSize: "160px",
   },
