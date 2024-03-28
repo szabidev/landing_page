@@ -41,6 +41,7 @@ const About = () => {
       </AboutBox>
       {!isSmallScreen && (
         <AboutImage
+          id="image-component"
           component="img"
           src={about.aboutImage}
           alt={about.aboutImageAlt}

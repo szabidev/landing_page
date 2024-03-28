@@ -7,10 +7,16 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 import { SocialBox } from "../../materialStyles/SocialBox";
 import { links } from "../../shared/variables";
 import "../../shared/variables.css";
+import throttle from "lodash.throttle";
 // TODO CHANGE COLOR DEPENDING ON CURRENT PAGE SECTION
 // TODO FIX SCROL EFFECT WHEN SOCIAL IS ON BOTTOM
 
-const Social = () => {
+interface SocialProps {
+  socialColor: string;
+  changeSocial: boolean;
+}
+
+const Social = ({ socialColor, changeSocial }: SocialProps) => {
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down(431));
   const isLargeScreen = useMediaQuery("(min-width:1920px)");
@@ -20,18 +26,15 @@ const Social = () => {
     if (!isSmallScreen) {
       let scrollTimeout: NodeJS.Timeout;
 
-      const handleScroll = () => {
+      const handleScroll = throttle(() => {
         setIsVisible(false);
-        // Reset the scroll timeout on each scroll event
         clearTimeout(scrollTimeout);
 
-        // Set a timeout to detect when scrolling stops
         scrollTimeout = setTimeout(() => {
           setIsVisible(true);
         }, 600);
-      };
+      }, 600);
 
-      // Add scroll event listener
       window.addEventListener("scroll", handleScroll);
 
       return () => {
@@ -53,11 +56,15 @@ const Social = () => {
   };
   const iconStyle = {
     fontSize: isLargeScreen ? "50px" : "30px",
-    color: isSmallScreen ? "var(--offwhite)" : "var(--fontMainColor)",
+    color: isSmallScreen
+      ? "var(--offwhite)"
+      : changeSocial
+      ? "var(--offwhite)"
+      : "var(--fontMainColor)",
   };
 
   return (
-    <Slide direction="down" in={isVisible} timeout={500}>
+    <Slide direction="down" in={isVisible} timeout={600}>
       <SocialBox>
         <Link href={links.linkedIn} target="_blank" sx={linkStyle}>
           <LinkedInIcon sx={iconStyle} />

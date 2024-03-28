@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import { Link } from "react-scroll";
 import { Slide } from "@mui/material";
 import { HeaderContainer } from "../../materialStyles/HeaderContainer";
@@ -6,35 +5,20 @@ import { StyledAppBar } from "../../materialStyles/StyledAppBar";
 import "./Header.css";
 import cta from "../../shared/json/cta.json";
 
-const Header = () => {
-  const [isVisible, setIsVisible] = useState<boolean>(true);
+interface HeaderProps {
+  isVisible: boolean;
+  headerColor: string;
+}
 
-  useEffect(() => {
-    let scrollTimeout: NodeJS.Timeout;
-
-    const handleScroll = () => {
-      setIsVisible(false);
-      // Reset the scroll timeout on each scroll event
-      clearTimeout(scrollTimeout);
-
-      // Set a timeout to detect when scrolling stops
-      scrollTimeout = setTimeout(() => {
-        setIsVisible(true);
-      }, 600);
-    };
-
-    // Add scroll event listener
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
+const Header = ({ isVisible, headerColor }: HeaderProps) => {
   return (
-    <Slide direction="down" in={isVisible} timeout={500}>
+    <Slide direction="down" in={isVisible} timeout={600}>
       <HeaderContainer maxWidth={false}>
-        <StyledAppBar position="sticky" sx={{ boxShadow: "none" }}>
+        <StyledAppBar
+          position="sticky"
+          sx={{ boxShadow: "none" }}
+          changeColor={headerColor}
+        >
           <Link isDynamic smooth className="nav-link" to="about">
             {cta.header.about}
           </Link>

@@ -11,6 +11,8 @@ export const FormBox = styled(Box)(() => ({
   backgroundColor: "var(--offwhite)",
   padding: "30px 10px",
   borderRadius: "50px",
+  positin: "relative",
+  zIndex: 20000,
 
   "@media screen and (min-width:300px) and  (max-width:800px)": {
     width: "80%",

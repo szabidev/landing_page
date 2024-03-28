@@ -4,13 +4,13 @@ import "../shared/variables.css";
 
 interface NavigationArrowProps extends StyledComponentProps {
   sx?: { [key: string]: string | number | any };
+  navigationColor: string;
 }
 
 export const NavigationArrow = styled(
   ExpandCircleDownIcon
-)<NavigationArrowProps>(() => ({
-  // ? or color var(--green) ?
-  color: "var(--fontMainColor)",
+)<NavigationArrowProps>(({ sx, navigationColor }) => ({
+  color: navigationColor || "var(--fontMainColor)",
   fontSize: 70,
   transition: "all 0.2s",
   cursor: "pointer",
@@ -19,7 +19,6 @@ export const NavigationArrow = styled(
     transform: "scale(1.1)",
   },
 
-  // ? Why variable names don't work sometime with material UI?
   "@media screen and (max-width: 431px)": {
     fontSize: 40,
     color: "var(--offwhite)",

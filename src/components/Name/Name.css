@@ -20,4 +20,17 @@
 .name-k {
 }
 
+.visible {
+  animation: changeColor 1s forwards;
+}
+
+@keyframes changeColor {
+  from {
+    color: var(--green);
+  }
+  to {
+    color: var(--offwhite);
+  }
+}
+
 /* ! DECIDE ON COLOR CHANGES ON TRANSITIONS */

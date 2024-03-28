@@ -5,7 +5,6 @@
   color: var(--fontMainColor);
   text-decoration: "none";
   letter-spacing: 3px;
-  /* ? or fontWeight: 800 - or just on small/large screen */
   font-weight: 600;
   font-size: 16px;
   margin: 0;
