@@ -1,18 +1,28 @@
 module.exports = {
-  roots: ["<rootDir>/src"],
-  testMatch: ["**/*.spec.ts", "**/*.spec.tsx", "**/*.test.ts", "**/*.test.tsx"],
+  preset: "ts-jest",
+  roots: ["<rootDir>"],
+  testMatch: [
+    "<rootDir>/__tests__/**/*.test.tsx",
+    "<rootDir>/__tests__/**/*.test.ts",
+    "<rootDir>/__tests__/**/*.spec.ts",
+    "<rootDir>/__tests__/**/*.spec.tsx",
+  ],
   transform: {
     "^.+\\.tsx?$": "ts-jest",
   },
+  setupFilesAfterEnv: ["./src/setupTests.ts"],
   moduleNameMapper: {
     "\\.(css|less|scss|sass)$": "identity-obj-proxy",
   },
   moduleFileExtensions: ["ts", "tsx", "js", "jsx", "json", "node"],
+  modulePaths: ["<rootDir>"],
   collectCoverage: true,
   collectCoverageFrom: [
-    "src/**/*.{js,jsx,ts,tsx}",
-    "!src/**/*.d.ts",
-    "src/**/{!(ignore-me),}.{js,jsx,ts,tsx}",
+    "src/**/*.{js,jsx,ts,tsx}", // Include all files under src directory
+    "!src/**/*.d.ts", // Exclude declaration files
+    "!src/setupTests.ts", // Exclude setupTests.ts
+    "!src/**/__tests__/**", // Exclude test files
+    "!src/**/__mocks__/**", // Exclude mock files
   ],
   coverageReporters: ["html", "text-summary"],
   coverageThreshold: {
@@ -24,4 +34,5 @@ module.exports = {
     },
   },
   watch: false,
+  testEnvironment: "jsdom",
 };
