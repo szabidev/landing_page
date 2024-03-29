@@ -3,14 +3,14 @@ import { Typography } from "@mui/material";
 import "../shared/variables.css";
 
 interface StyledNameProps extends StyledComponentProps {
-  nameColor: string;
+  namecolor: string;
 }
 
 export const StyledName = styled(Typography)<StyledNameProps>(
-  ({ nameColor }) => ({
+  ({ namecolor }) => ({
     fontFamily: "var(--font-secondary)",
     textTransform: "uppercase",
-    color: nameColor,
+    color: namecolor,
     fontWeight: "300",
     fontSize: "96px",
 

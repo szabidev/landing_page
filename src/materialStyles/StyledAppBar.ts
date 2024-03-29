@@ -3,12 +3,12 @@ import { styled, StyledComponentProps } from "@mui/material/styles";
 import "../shared/variables.css";
 
 interface StyledAppBarProps extends StyledComponentProps {
-  changeColor: string;
+  changecolor: string;
 }
 
 export const StyledAppBar = styled(AppBar)<StyledAppBarProps>(
-  ({ changeColor }) => ({
-    backgroundColor: changeColor,
+  ({ changecolor }) => ({
+    backgroundColor: changecolor,
     maxWidth: "50%",
     height: "60px",
     borderRadius: "50px",

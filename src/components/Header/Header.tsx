@@ -7,17 +7,17 @@ import cta from "../../shared/json/cta.json";
 
 interface HeaderProps {
   isVisible: boolean;
-  headerColor: string;
+  headercolor: string;
 }
 
-const Header = ({ isVisible, headerColor }: HeaderProps) => {
+const Header = ({ isVisible, headercolor }: HeaderProps) => {
   return (
     <Slide direction="down" in={isVisible} timeout={600}>
       <HeaderContainer maxWidth={false}>
         <StyledAppBar
           position="sticky"
           sx={{ boxShadow: "none" }}
-          changeColor={headerColor}
+          changecolor={headercolor}
         >
           <Link isDynamic smooth className="nav-link" to="about">
             {cta.header.about}

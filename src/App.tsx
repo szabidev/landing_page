@@ -76,13 +76,13 @@ function App() {
   }, []);
   return (
     <div className="App" id="app-container">
-      <Header isVisible={isVisible} headerColor={headerColor} />
+      <Header isVisible={isVisible} headercolor={headerColor} />
       <Social socialColor={socialColor} changeSocial={changeSocial} />
       <NavigationArrowMenu
-        navigationColor={navigationColor}
+        navigationcolor={navigationColor}
         isVisible={isVisible}
       />
-      {isLargeScreen && <Name nameColor={nameColor} />}
+      {isLargeScreen && <Name namecolor={nameColor} />}
       <Element id="home" name="home">
         <Home />
       </Element>

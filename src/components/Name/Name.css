@@ -1,6 +1,6 @@
 @import "../../shared/variables.css";
 
-.name-s {
+/* .name-s {
 }
 .name-z {
 }
@@ -18,7 +18,7 @@
 .name-e {
 }
 .name-k {
-}
+} */
 
 .visible {
   animation: changeColor 1s forwards;
@@ -32,5 +32,3 @@
     color: var(--offwhite);
   }
 }
-
-/* ! DECIDE ON COLOR CHANGES ON TRANSITIONS */

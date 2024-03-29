@@ -4,13 +4,13 @@ import "../shared/variables.css";
 
 interface NavigationArrowProps extends StyledComponentProps {
   sx?: { [key: string]: string | number | any };
-  navigationColor: string;
+  navigationcolor: string;
 }
 
 export const NavigationArrow = styled(
   ExpandCircleDownIcon
-)<NavigationArrowProps>(({ sx, navigationColor }) => ({
-  color: navigationColor || "var(--fontMainColor)",
+)<NavigationArrowProps>(({ sx, navigationcolor }) => ({
+  color: navigationcolor,
   fontSize: 70,
   transition: "all 0.2s",
   cursor: "pointer",

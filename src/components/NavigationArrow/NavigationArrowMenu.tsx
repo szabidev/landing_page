@@ -6,17 +6,16 @@ import "../../shared/variables.css";
 import { Fade } from "@mui/material";
 
 interface NavigationArrowMenuProps {
-  navigationColor: string;
+  navigationcolor: string;
   isVisible: boolean;
 }
 
 const NavigationArrowMenu = ({
-  navigationColor,
+  navigationcolor,
   isVisible,
 }: NavigationArrowMenuProps) => {
   const sectionNames: string[] = ["home", "about", "projects", "contact"];
   const [currentSectionIndex, setCurrentSectionIndex] = useState<number>(0);
-
   const handleScrollTo = (index: number) => {
     setCurrentSectionIndex(index);
     scroller.scrollTo(sectionNames[index], {
@@ -35,12 +34,12 @@ const NavigationArrowMenu = ({
     <Fade in={isVisible} timeout={500}>
       <NavigationBox>
         <NavigationArrow
-          navigationColor={navigationColor}
+          navigationcolor={navigationcolor}
           onClick={() => handleScrollTo(Math.max(0, currentSectionIndex - 1))}
           sx={{ ...rotate, transform: "rotate(180deg)" }}
         />
         <NavigationArrow
-          navigationColor={navigationColor}
+          navigationcolor={navigationcolor}
           onClick={() =>
             handleScrollTo(
               Math.min(sectionNames.length - 1, currentSectionIndex + 1)

@@ -26,7 +26,7 @@ interface FormValues {
 
 const Contact = () => {
   const isMobile = useMediaQuery("(max-width:599px)");
-  const notMobile = useMediaQuery("(min-width:600p)x");
+  const notMobile = useMediaQuery("(min-width:600px)");
   const [isSubmitted, setIsSubmitted] = useState<boolean>(false);
   const [alertOpen, setAlertOpen] = useState<boolean>(false);
   const [submissionError, setSubmissionError] = useState<string | null>(null);
@@ -78,6 +78,8 @@ const Contact = () => {
     }
   }, [isSubmitted, submissionError, isMobile]);
 
+  console.log(isSubmitted);
+  console.log(notMobile);
   return (
     <Container
       maxWidth={false}
