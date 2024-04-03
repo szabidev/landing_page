@@ -15,4 +15,7 @@ export const ProjectBox = styled(Box)(() => ({
     marginRight: 0,
     paddingTop: "50px",
   },
+  "@media screen and (min-width:801px) and (max-width:1300px)": {
+    marginRight: 0,
+  },
 }));
