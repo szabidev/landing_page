@@ -18,4 +18,9 @@ export const FormBox = styled(Box)(() => ({
     width: "80%",
     gap: 24,
   },
+
+  "@media screen and (min-width:1920px)": {
+    height: "500px",
+    gap: 50,
+  },
 }));

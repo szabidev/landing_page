@@ -7,6 +7,7 @@ export const FooterContainer = styled(Container)<StyledComponentProps>(() => ({
   bottom: 0,
   height: "60px",
   backgroundColor: "#343332",
+  zIndex: 20001,
 
   "&.MuiContainer-root": {
     maxWidth: "100%",

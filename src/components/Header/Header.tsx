@@ -2,8 +2,8 @@ import { Link } from "react-scroll";
 import { Slide } from "@mui/material";
 import { HeaderContainer } from "../../materialStyles/HeaderContainer";
 import { StyledAppBar } from "../../materialStyles/StyledAppBar";
-import "./Header.css";
 import cta from "../../shared/json/cta.json";
+import "./Header.css";
 
 interface HeaderProps {
   isVisible: boolean;

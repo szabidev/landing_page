@@ -50,7 +50,6 @@ const Skills = () => {
         <Typography
           align="center"
           variant="h3"
-          // ? MAYBE CHANGE COLOR
           sx={{
             fontFamily: "Open Sans,sans serif",
             color: "var(--green)",

@@ -1,8 +1,8 @@
 import { Container } from "@mui/material";
 import ProjectCard from "../ProjectCard/ProjectCard";
 import { SectionTitle } from "../../materialStyles/SectionTitle";
-import "../../shared/variables.css";
 import { ProjectBox } from "../../materialStyles/ProjectBox";
+import "../../shared/variables.css";
 
 const Projects = () => {
   return (

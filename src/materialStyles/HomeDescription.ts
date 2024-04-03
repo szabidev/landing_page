@@ -9,7 +9,6 @@ export const HomeDescription = styled(Typography)<StyledComponentProps>(() => ({
   top: 80,
   right: 20,
   fontFamily: "Open sans, sans serif",
-  // ? Maybe change font weight
   fontWeight: 400,
 
   "@media screen and (min-width:500px) and (max-width:800px)": {

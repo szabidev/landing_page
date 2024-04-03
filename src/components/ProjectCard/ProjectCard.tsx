@@ -17,10 +17,10 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 import LaptopMacIcon from "@mui/icons-material/LaptopMac";
 import ProjectListItem from "../ProjectListItem/ProjectListItem";
 import { ProjectCardContainer } from "../../materialStyles/ProjectCardContainer";
+import { SliderBox } from "../../materialStyles/SliderBox";
 import { flex } from "../../shared/variables";
 import { buttonTheme } from "../../shared/theme";
 import "../../shared/variables.css";
-import { SliderBox } from "../../materialStyles/SliderBox";
 
 const ProjectCard = () => {
   const [open, setOpen] = useState<boolean>(false);
@@ -56,10 +56,8 @@ const ProjectCard = () => {
       transform: "scale(1.1)",
     },
   };
-  // ! MAYBE ADD ZOOM EFFECT TO IMAGE
 
   const handleModal = () => {
-    console.log("clicked");
     setOpen(true);
     setSlideIn(true);
   };

@@ -1,15 +1,13 @@
 import { useEffect, useState } from "react";
-import { Link, Slide, useMediaQuery, useTheme } from "@mui/material";
+import throttle from "lodash.throttle";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import GitHubIcon from "@mui/icons-material/GitHub";
+import { Link, Slide, useMediaQuery, useTheme } from "@mui/material";
 import { SocialBox } from "../../materialStyles/SocialBox";
 import { links } from "../../shared/variables";
 import "../../shared/variables.css";
-import throttle from "lodash.throttle";
-// TODO CHANGE COLOR DEPENDING ON CURRENT PAGE SECTION
-// TODO FIX SCROL EFFECT WHEN SOCIAL IS ON BOTTOM
 
 interface SocialProps {
   socialColor: string;

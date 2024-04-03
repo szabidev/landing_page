@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Element } from "react-scroll";
-import { useMediaQuery } from "@mui/material";
+import { Container, useMediaQuery } from "@mui/material";
 import throttle from "lodash.throttle";
 
 import About from "./components/About/About";
@@ -76,26 +76,28 @@ function App() {
   }, []);
   return (
     <div className="App" id="app-container">
-      <Header isVisible={isVisible} headercolor={headerColor} />
-      <Social socialColor={socialColor} changeSocial={changeSocial} />
-      <NavigationArrowMenu
-        navigationcolor={navigationColor}
-        isVisible={isVisible}
-      />
-      {isLargeScreen && <Name namecolor={nameColor} />}
-      <Element id="home" name="home">
-        <Home />
-      </Element>
-      <Element id="about" name="about">
-        <About />
-      </Element>
-      <Element id="projects" name="projects">
-        <Projects />
-      </Element>
-      <Element id="contact" name="contact">
-        <Contact />
-      </Element>
-      <Footer />
+      <Container maxWidth={false} style={{ padding: 0, margin: 0 }}>
+        <Header isVisible={isVisible} headercolor={headerColor} />
+        <Social socialColor={socialColor} changeSocial={changeSocial} />
+        <NavigationArrowMenu
+          navigationcolor={navigationColor}
+          isVisible={isVisible}
+        />
+        {isLargeScreen && <Name namecolor={nameColor} />}
+        <Element id="home" name="home">
+          <Home />
+        </Element>
+        <Element id="about" name="about">
+          <About />
+        </Element>
+        <Element id="projects" name="projects">
+          <Projects />
+        </Element>
+        <Element id="contact" name="contact">
+          <Contact />
+        </Element>
+        <Footer />
+      </Container>
     </div>
   );
 }

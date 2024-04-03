@@ -6,7 +6,6 @@ export const AboutBox = styled(Box)<StyledComponentProps>(() => ({
   width: "338px",
   padding: "10px 0 60px 320px",
 
-  // TODO  DECIED WHETER TO DISPLAY OR NOT THE NAME COMPONENT ON SMALL SCREENS
   "@media screen and (min-width:320px) and (max-width:400px)": {
     padding: "50px 0 60px 20px",
   },

@@ -16,4 +16,8 @@ export const ContactDescription = styled(Typography)(() => ({
     width: "100%",
     fontSize: "30px",
   },
+
+  "@media screen and (min-width:1920px)": {
+    fontSize: "64px",
+  },
 }));

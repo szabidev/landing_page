@@ -1,9 +1,9 @@
 import { useState } from "react";
+import { scroller } from "react-scroll";
+import { Fade } from "@mui/material";
 import { NavigationBox } from "../../materialStyles/NavigationBox";
 import { NavigationArrow } from "../../materialStyles/NavigationArrow";
-import { scroller } from "react-scroll";
 import "../../shared/variables.css";
-import { Fade } from "@mui/material";
 
 interface NavigationArrowMenuProps {
   navigationcolor: string;

@@ -5,8 +5,8 @@ import { AboutDescription } from "../../materialStyles/AboutDescription";
 import { AboutImage } from "../../materialStyles/AboutImage";
 import { SectionTitle } from "../../materialStyles/SectionTitle";
 import Skills from "../Skills/Skills";
-import "../../shared/variables.css";
 import about from "../../shared/json/about.json";
+import "../../shared/variables.css";
 
 const About = () => {
   const isSmallScreen = useMediaQuery("(max-width:800px)");

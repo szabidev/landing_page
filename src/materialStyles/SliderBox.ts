@@ -7,7 +7,6 @@ export const SliderBox = styled(Box)(() => ({
   bottom: 0,
   zIndex: 10000,
   marginLeft: 0,
-  // ? Maybe offwhite color?
   backgroundColor: "#fff",
   width: "500px",
   height: "444px",

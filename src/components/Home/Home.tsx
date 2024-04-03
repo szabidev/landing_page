@@ -2,8 +2,8 @@ import { Box, Container } from "@mui/material";
 import Title from "../Title/Title";
 import { HomeDescription } from "../../materialStyles/HomeDescription";
 import { HomeImage } from "../../materialStyles/HomeImage";
-import "../../shared/variables.css";
 import home from "../../shared/json/home.json";
+import "../../shared/variables.css";
 
 const Home = () => {
   return (

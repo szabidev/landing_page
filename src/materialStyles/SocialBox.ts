@@ -10,7 +10,7 @@ export const SocialBox = styled(Box)(() => ({
   position: "fixed",
   top: 65,
   left: "calc(50% - 75px)",
-  zIndex: 1002,
+  zIndex: 21002,
 
   "@media screen and (max-width: 431px)": {
     color: "#eae6dc",

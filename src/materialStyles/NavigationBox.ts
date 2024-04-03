@@ -10,7 +10,7 @@ export const NavigationBox = styled(Box)<StyledComponentProps>(() => ({
   position: "fixed",
   bottom: 60,
   left: 40,
-  zIndex: 1003,
+  zIndex: 21003,
 
   "@media screen and (max-width: 390px)": {
     flexDirection: "row",
