@@ -4,6 +4,8 @@ export const flex = {
   alignItems: "center",
 };
 
+export const URL = "https://landing-page-server-1mwz.onrender.com/submit-form";
+
 export const links = Object.freeze({
   linkedIn: "https://www.linkedin.com/in/szabolcs-vojtek/",
   facebook: "https://www.facebook.com/szabi.vojtek",

@@ -14,7 +14,16 @@ export const StyledTitle = styled(Typography)<StyledComponentProps>(() => ({
   "@media screen and (min-width:501px) and (max-width:800px)": {
     fontSize: "96px",
   },
-  "@media screen and (min-width:801px) and (max-width:1919px)": {
+  "@media screen and (min-width:801px) and (max-width:1024px)": {
+    fontSize: "80px",
+  },
+  "@media screen and (min-width:1025px) and (max-width:1280px)": {
+    fontSize: "120px",
+  },
+  "@media screen and (min-width:1281px) and (max-width:1366px)": {
+    fontSize: "100px",
+  },
+  "@media screen and (min-width:1367px) and (max-width:1600px)": {
     fontSize: "120px",
   },
   "@media screen and (min-width:1920px)": {

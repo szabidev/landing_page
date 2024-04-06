@@ -17,6 +17,7 @@ import { buttonTheme } from "../../shared/theme";
 import { FormBox } from "../../materialStyles/FormBox";
 import contact from "../../shared/json/contact.json";
 import "../../shared/variables.css";
+import { URL } from "../../shared/variables";
 
 interface FormValues {
   name: string;
@@ -46,16 +47,13 @@ const Contact = () => {
 
   const onSubmit = async (values: FormValues) => {
     try {
-      const response = await fetch(
-        "https://landing-page-server-1mwz.onrender.com/submit-form",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(values),
-        }
-      );
+      const response = await fetch(URL, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(values),
+      });
 
       if (response.ok) {
         setIsSubmitted(true);
