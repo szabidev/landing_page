@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Element } from "react-scroll";
 import { Container, useMediaQuery } from "@mui/material";
 import throttle from "lodash.throttle";
@@ -25,6 +25,7 @@ function App() {
   );
   const [changeSocial, setChangeSocial] = useState<boolean>(false);
   const [nameColor, setNameColor] = useState<string>("var(--green)");
+  const nameBoxRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     let scrollTimeout: NodeJS.Timeout;
@@ -43,7 +44,6 @@ function App() {
       const scrolledPercentage =
         (scrollPosition / (pageHeight - windowHeight)) * 100;
 
-      console.log(scrolledPercentage);
       if (scrolledPercentage >= 0 && scrolledPercentage < 18.48) {
         setHeaderColor("var(--white)");
         setNavigationColor("var(--fontMainColor)");
@@ -74,6 +74,7 @@ function App() {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
   return (
     <div className="App" id="app-container">
       <Container maxWidth={false} style={{ padding: 0, margin: 0 }}>
@@ -83,7 +84,7 @@ function App() {
           navigationcolor={navigationColor}
           isVisible={isVisible}
         />
-        {isLargeScreen && <Name namecolor={nameColor} />}
+        {isLargeScreen && <Name namecolor={nameColor} ref={nameBoxRef} />}
         <Element id="home" name="home">
           <Home />
         </Element>
