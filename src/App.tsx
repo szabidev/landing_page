@@ -1,7 +1,8 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { Element } from "react-scroll";
 import { Container, useMediaQuery } from "@mui/material";
 import throttle from "lodash.throttle";
+import {ReactLenis, useLenis} from '@studio-freight/react-lenis';
 
 import About from "./components/About/About";
 import Footer from "./components/Footer/Footer";
@@ -14,6 +15,9 @@ import Projects from "./components/Projects/Projects";
 import Contact from "./components/Contact/Contact";
 
 function App() {
+  const lenis = useLenis(({scroll})=> {
+
+  })
   const isLargeScreen = useMediaQuery("(min-width:800px)");
   const [isVisible, setIsVisible] = useState<boolean>(true);
   const [headerColor, setHeaderColor] = useState<string>("var(--white)");
@@ -25,7 +29,6 @@ function App() {
   );
   const [changeSocial, setChangeSocial] = useState<boolean>(false);
   const [nameColor, setNameColor] = useState<string>("var(--green)");
-  const nameBoxRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     let scrollTimeout: NodeJS.Timeout;
@@ -76,6 +79,8 @@ function App() {
   }, []);
 
   return (
+    // TODO check out LENIS package animations, SPLIT-TYPE
+    <ReactLenis root>
     <div className="App" id="app-container">
       <Container maxWidth={false} style={{ padding: 0, margin: 0 }}>
         <Header isVisible={isVisible} headercolor={headerColor} />
@@ -84,7 +89,7 @@ function App() {
           navigationcolor={navigationColor}
           isVisible={isVisible}
         />
-        {isLargeScreen && <Name namecolor={nameColor} ref={nameBoxRef} />}
+        {isLargeScreen && <Name nameColor={nameColor}/>}
         <Element id="home" name="home">
           <Home />
         </Element>
@@ -100,6 +105,7 @@ function App() {
         <Footer />
       </Container>
     </div>
+    </ReactLenis>
   );
 }
 

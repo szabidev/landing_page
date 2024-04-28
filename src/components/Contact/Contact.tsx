@@ -79,8 +79,6 @@ const Contact = () => {
     }
   }, [isSubmitted, submissionError, isMobile]);
 
-  console.log(isSubmitted);
-  console.log(notMobile);
   return (
     <Container
       maxWidth={false}

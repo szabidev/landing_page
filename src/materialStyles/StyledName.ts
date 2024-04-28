@@ -1,18 +1,20 @@
 import { styled, StyledComponentProps } from "@mui/material/styles";
-import { Typography } from "@mui/material";
+import { Typography, TypographyProps } from "@mui/material";
 import "../shared/variables.css";
 
-interface StyledNameProps extends StyledComponentProps {
-  namecolor: string;
+interface StyledNameProps  extends TypographyProps {
+  nameColor: string;
 }
-
+// TODO check out mix-blend-mode property
 export const StyledName = styled(Typography)<StyledNameProps>(
-  ({ namecolor }) => ({
+  ({ nameColor }) => ({
     fontFamily: "var(--font-secondary)",
     textTransform: "uppercase",
-    color: namecolor,
+    color: nameColor,
     fontWeight: "300",
     fontSize: "96px",
+    mixBlendMode:'difference',
+   
 
     "@media screen and (min-width:320px) and (max-width:431px)": {
       fontSize: "56px",
