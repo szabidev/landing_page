@@ -1,4 +1,4 @@
-import { styled, StyledComponentProps } from "@mui/material/styles";
+import { styled } from "@mui/material/styles";
 import { Typography, TypographyProps } from "@mui/material";
 import "../shared/variables.css";
 
@@ -13,9 +13,7 @@ export const StyledName = styled(Typography)<StyledNameProps>(
     color: nameColor,
     fontWeight: "300",
     fontSize: "96px",
-    mixBlendMode:'difference',
    
-
     "@media screen and (min-width:320px) and (max-width:431px)": {
       fontSize: "56px",
     },

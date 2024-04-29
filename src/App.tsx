@@ -2,7 +2,8 @@ import { useEffect, useState } from "react";
 import { Element } from "react-scroll";
 import { Container, useMediaQuery } from "@mui/material";
 import throttle from "lodash.throttle";
-import {ReactLenis, useLenis} from '@studio-freight/react-lenis';
+import {ReactLenis} from '@studio-freight/react-lenis';
+// import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import About from "./components/About/About";
 import Footer from "./components/Footer/Footer";
@@ -13,11 +14,12 @@ import NavigationArrowMenu from "./components/NavigationArrow/NavigationArrowMen
 import Social from "./components/Social/Social";
 import Projects from "./components/Projects/Projects";
 import Contact from "./components/Contact/Contact";
+// import gsap from "gsap";
+// import SplitType from "split-type";
+
+// gsap.registerPlugin(ScrollTrigger)
 
 function App() {
-  const lenis = useLenis(({scroll})=> {
-
-  })
   const isLargeScreen = useMediaQuery("(min-width:800px)");
   const [isVisible, setIsVisible] = useState<boolean>(true);
   const [headerColor, setHeaderColor] = useState<string>("var(--white)");
@@ -30,9 +32,33 @@ function App() {
   const [changeSocial, setChangeSocial] = useState<boolean>(false);
   const [nameColor, setNameColor] = useState<string>("var(--green)");
 
+ 
+  //   const splitTypes = document.querySelectorAll<HTMLElement>('.name');
+  //   console.log(splitTypes)
+  //   splitTypes.forEach((char, i) => {
+  //     const bg= char.dataset.bgColor;
+  //     const fg = char.dataset.fgColor
+  //     const text = new SplitType(char, { types: 'chars' });
+  //     console.log(text)
+  //    gsap.fromTo(text.chars,{
+  //     color:bg,
+  //    },
+  //   {
+  //     color:fg,
+  //     // duration:0.2,
+  //     // stagger:0.01,
+  //     scrollTrigger:{
+  //       trigger:char,
+  //       start:'bottom 80%',
+  //       end:'bottom 100%',
+  //       scrub:false,
+  //       markers:false
+  //     }
+  //   })
+  // });
+
   useEffect(() => {
     let scrollTimeout: NodeJS.Timeout;
-
     const handleScroll = throttle(() => {
       setIsVisible(false);
       clearTimeout(scrollTimeout);
